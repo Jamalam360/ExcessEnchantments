@@ -53,10 +53,10 @@ public class ExcessEnchantmentsInit implements ModInitializer {
             new ButcherEnchantment()
     );
 
-    public static Enchantment OBSIDIAN_EFFICIENCY = Registry.register(
+    public static Enchantment WARP = Registry.register(
             Registry.ENCHANTMENT,
-            new Identifier(MOD_ID, "obsidian_efficiency"),
-            new ObsidianEfficiencyEnchantment()
+            new Identifier(MOD_ID, "warp"),
+            new WarpEnchantment()
     );
 
     @Override
