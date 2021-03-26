@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "com.jamalam360.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "AnimalEntityMixin",
+    "BlazeEntityMixin",
+    "EnderDragonEntityMixin",
+    "EndermanEntityMixin",
+    "LivingEntityMixin",
+    "MagmaCubeEntityMixin",
+    "PlayerEntityMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

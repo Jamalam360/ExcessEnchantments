@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "excessenchantmentsfabric",
+  "version": "${version}",
+  "name": "Excess Enchantments",
+  "description": "Adds loads of enchantments",
+  "authors": [
+    "Jamalam360"
+  ],
+  "contributors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/excessenchantmentsfabric/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.jamalam360.ExcessEnchantmentsInit"
+    ],
+    "client": [],
+    "server": []
+  },
+  "mixins": [
+    "excessenchantmentsfabric.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*"
+  }
+}
