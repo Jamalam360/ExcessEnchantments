@@ -59,6 +59,12 @@ public class ExcessEnchantmentsInit implements ModInitializer {
             new WarpEnchantment()
     );
 
+    public static Enchantment SLIPPERY_CURSE = Registry.register(
+            Registry.ENCHANTMENT,
+            new Identifier(MOD_ID, "slippery_curse"),
+            new SlipperyCurseEnchantment()
+    );
+
     @Override
     public void onInitialize() {
         log(Level.INFO, "Initializing");
