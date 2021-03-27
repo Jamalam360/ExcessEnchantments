@@ -65,6 +65,12 @@ public class ExcessEnchantmentsInit implements ModInitializer {
             new SlipperyCurseEnchantment()
     );
 
+    public static Enchantment HAPHAZARD = Registry.register(
+            Registry.ENCHANTMENT,
+            new Identifier(MOD_ID, "haphazard"),
+            new HaphazardEnchantment()
+    );
+
     @Override
     public void onInitialize() {
         log(Level.INFO, "Initializing");
