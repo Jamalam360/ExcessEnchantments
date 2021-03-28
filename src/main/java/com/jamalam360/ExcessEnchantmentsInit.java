@@ -77,6 +77,12 @@ public class ExcessEnchantmentsInit implements ModInitializer {
             new SwiftEnchantment()
     );
 
+    public static Enchantment VAMPIRE = Registry.register(
+            Registry.ENCHANTMENT,
+            new Identifier(MOD_ID, "vampire"),
+            new VampireEnchantment()
+    );
+
     @Override
     public void onInitialize() {
         log(Level.INFO, "Initializing");
