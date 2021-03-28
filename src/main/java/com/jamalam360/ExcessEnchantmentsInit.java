@@ -83,6 +83,12 @@ public class ExcessEnchantmentsInit implements ModInitializer {
             new VampireEnchantment()
     );
 
+    public static Enchantment ADRENALIN = Registry.register(
+            Registry.ENCHANTMENT,
+            new Identifier(MOD_ID, "adrenalin"),
+            new AdrenalinEnchantment()
+    );
+
     @Override
     public void onInitialize() {
         log(Level.INFO, "Initializing");
