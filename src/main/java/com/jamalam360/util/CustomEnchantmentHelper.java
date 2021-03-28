@@ -60,4 +60,8 @@ public class CustomEnchantmentHelper {
     public static boolean hasSnowCurse(ItemStack stack) {
         return getLevel(ExcessEnchantmentsInit.SNOW_CURSE, stack) > 0;
     }
+
+    public static boolean hasSwift(ItemStack stack) {
+        return getLevel(ExcessEnchantmentsInit.SWIFT, stack) > 0;
+    }
 }

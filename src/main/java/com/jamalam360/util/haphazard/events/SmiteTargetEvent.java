@@ -13,14 +13,14 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.Level;
 
-public class SmiteUserEvent extends HaphazardEvent {
+public class SmiteTargetEvent extends HaphazardEvent {
     private final SoundEvent soundEvent = SoundEvents.ITEM_TRIDENT_THUNDER;
 
     @Override
     public void onAttack(LivingEntity user, Entity target, int enchantLevel){
         if(!user.world.isClient) {
-            BlockPos blockPos = user.getBlockPos();
-            LightningEntity lightningEntity = EntityType.LIGHTNING_BOLT.create(user.world);
+            BlockPos blockPos = target.getBlockPos();
+            LightningEntity lightningEntity = EntityType.LIGHTNING_BOLT.create(target.world);
             try {
                 lightningEntity.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(blockPos));
             } catch (Exception e) {
@@ -30,7 +30,7 @@ public class SmiteUserEvent extends HaphazardEvent {
                 lightningEntity.setChanneler((ServerPlayerEntity) user);
             }
 
-            user.world.spawnEntity(lightningEntity);
+            target.world.spawnEntity(lightningEntity);
 
             target.playSound(soundEvent, 5.0F, 1.0F);
         }

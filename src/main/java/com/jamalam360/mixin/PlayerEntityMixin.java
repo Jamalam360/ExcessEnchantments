@@ -1,12 +1,15 @@
 package com.jamalam360.mixin;
 
 
+import com.jamalam360.ExcessEnchantmentsInit;
 import com.jamalam360.util.CustomEnchantmentHelper;
 import com.jamalam360.util.ISnowy;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -66,6 +69,10 @@ public class PlayerEntityMixin implements ISnowy {
         Iterable<ItemStack> armorIterable = ((PlayerEntity) (Object) this).getArmorItems();
         if(CustomEnchantmentHelper.hasSnowCurse(CustomEnchantmentHelper.getArmorItemFromIterable(armorIterable, EquipmentSlot.FEET))){
             this.setTrailingSnow(true, 0);
+        }
+
+        if(CustomEnchantmentHelper.hasSwift(CustomEnchantmentHelper.getArmorItemFromIterable(armorIterable, EquipmentSlot.FEET))){
+            ((PlayerEntity) (Object) this).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 20, CustomEnchantmentHelper.getLevel(ExcessEnchantmentsInit.SWIFT, CustomEnchantmentHelper.getArmorItemFromIterable(armorIterable, EquipmentSlot.FEET)) - 1, true, false, false));
         }
 
         if(this.isTrailingSnow()){

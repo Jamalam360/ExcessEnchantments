@@ -71,6 +71,12 @@ public class ExcessEnchantmentsInit implements ModInitializer {
             new HaphazardEnchantment()
     );
 
+    public static Enchantment SWIFT = Registry.register(
+            Registry.ENCHANTMENT,
+            new Identifier(MOD_ID, "swift"),
+            new SwiftEnchantment()
+    );
+
     @Override
     public void onInitialize() {
         log(Level.INFO, "Initializing");
