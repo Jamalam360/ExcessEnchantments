@@ -1,7 +1,6 @@
 package com.jamalam360.util;
 
-import net.minecraft.util.math.BlockPos;
-
+//Allows entities that implement this interface to randomly teleport like an enderman. This is a duck interface
 public interface ITeleportRandom {
     void teleport();
 }
