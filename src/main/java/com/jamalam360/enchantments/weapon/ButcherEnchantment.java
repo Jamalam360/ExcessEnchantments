@@ -1,5 +1,6 @@
-package com.jamalam360.enchantments;
+package com.jamalam360.enchantments.weapon;
 
+import com.jamalam360.enchantments.weapon.AquaAspectEnchantment;
 import com.jamalam360.util.CustomEntityGroup;
 import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;

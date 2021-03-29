@@ -1,16 +1,16 @@
 package com.jamalam360;
 
-import com.jamalam360.enchantments.*;
-import com.mojang.brigadier.arguments.BoolArgumentType;
+import com.jamalam360.enchantments.armor.MarathonEnchantment;
+import com.jamalam360.enchantments.armor.SwiftEnchantment;
+import com.jamalam360.enchantments.breakable.SlipperyCurseEnchantment;
+import com.jamalam360.enchantments.weapon.*;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import static net.minecraft.server.command.CommandManager.*;
 
 @SuppressWarnings("unused")
 public class ExcessEnchantmentsInit implements ModInitializer {

@@ -1,4 +1,4 @@
-package com.jamalam360.enchantments;
+package com.jamalam360.enchantments.weapon;
 
 import com.jamalam360.util.CustomEnchantment;
 import com.jamalam360.util.haphazard.HaphazardEvents;

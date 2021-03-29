@@ -1,4 +1,4 @@
-package com.jamalam360.enchantments;
+package com.jamalam360.enchantments.weapon;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
