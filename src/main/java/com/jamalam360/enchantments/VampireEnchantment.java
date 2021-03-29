@@ -1,7 +1,5 @@
 package com.jamalam360.enchantments;
 
-import com.jamalam360.util.haphazard.HaphazardEvents;
-import com.jamalam360.util.haphazard.events.HaphazardEvent;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;

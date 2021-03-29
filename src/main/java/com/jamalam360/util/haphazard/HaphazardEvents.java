@@ -1,6 +1,9 @@
 package com.jamalam360.util.haphazard;
 
+import com.jamalam360.ExcessEnchantmentsInit;
 import com.jamalam360.util.haphazard.events.*;
+import net.minecraft.text.LiteralText;
+import org.apache.logging.log4j.Level;
 
 import java.util.Random;
 
@@ -19,6 +22,11 @@ public class HaphazardEvents {
 
     public static HaphazardEvent getRandomEvent() {
         int rnd = random.nextInt(HAPHAZARD_EVENTS.length);
+
+        if(ExcessEnchantmentsInit.isHaphazardDebugMode){
+            ExcessEnchantmentsInit.log(Level.INFO, new LiteralText("The selected haphazard event is " + HAPHAZARD_EVENTS[rnd].toString() + ". You are seeing this message because you have enabled Haphazard debug mode using /haphazarddebug true").getString());
+        }
+
         return HAPHAZARD_EVENTS[rnd];
     }
 }
