@@ -55,8 +55,8 @@ public class PlayerEntityMixin implements ISnowy {
         Iterable<ItemStack> armorFeetIterable = ((PlayerEntity) (Object) this).getArmorItems();
         @Nullable ItemStack armorFeet = CustomEnchantmentHelper.getArmorItemFromIterable(armorFeetIterable, EquipmentSlot.FEET);
 
-        if(armorFeet != null){
-            if(CustomEnchantmentHelper.hasMarathon(armorFeet)){
+        if (armorFeet != null) {
+            if (CustomEnchantmentHelper.hasMarathon(armorFeet)) {
                 return output / 2f;
             }
         }
@@ -65,17 +65,17 @@ public class PlayerEntityMixin implements ISnowy {
     }
 
     @Inject(at = @At("TAIL"), method = "tickMovement()V")
-    public void tickMovement(CallbackInfo ci){
+    public void tickMovement(CallbackInfo ci) {
         Iterable<ItemStack> armorIterable = ((PlayerEntity) (Object) this).getArmorItems();
-        if(CustomEnchantmentHelper.hasSnowCurse(CustomEnchantmentHelper.getArmorItemFromIterable(armorIterable, EquipmentSlot.FEET))){
+        if (CustomEnchantmentHelper.hasSnowCurse(CustomEnchantmentHelper.getArmorItemFromIterable(armorIterable, EquipmentSlot.FEET))) {
             this.setTrailingSnow(true, 10);
         }
 
-        if(CustomEnchantmentHelper.hasSwift(CustomEnchantmentHelper.getArmorItemFromIterable(armorIterable, EquipmentSlot.FEET))){
+        if (CustomEnchantmentHelper.hasSwift(CustomEnchantmentHelper.getArmorItemFromIterable(armorIterable, EquipmentSlot.FEET))) {
             ((PlayerEntity) (Object) this).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 20, CustomEnchantmentHelper.getLevel(ExcessEnchantmentsInit.SWIFT, CustomEnchantmentHelper.getArmorItemFromIterable(armorIterable, EquipmentSlot.FEET)) - 1, true, false, false));
         }
 
-        if(this.isTrailingSnow()){
+        if (this.isTrailingSnow()) {
             LivingEntity instance = ((LivingEntity) (Object) this);
 
             BlockState blockState = Blocks.SNOW.getDefaultState();
@@ -84,10 +84,10 @@ public class PlayerEntityMixin implements ISnowy {
             int j = MathHelper.floor(instance.getY());
             int k = MathHelper.floor(instance.getZ());
 
-            for(int l = 0; l < 4; ++l) {
-                i = MathHelper.floor(instance.getX() + (double)((float)(l % 2 * 2 - 1) * 0.25F));
+            for (int l = 0; l < 4; ++l) {
+                i = MathHelper.floor(instance.getX() + (double) ((float) (l % 2 * 2 - 1) * 0.25F));
                 j = MathHelper.floor(instance.getY());
-                k = MathHelper.floor(instance.getZ() + (double)((float)(l / 2 % 2 * 2 - 1) * 0.25F));
+                k = MathHelper.floor(instance.getZ() + (double) ((float) (l / 2 % 2 * 2 - 1) * 0.25F));
                 BlockPos blockPos = new BlockPos(i, j, k);
                 if (instance.world.getBlockState(blockPos).isAir() && instance.world.getBiome(blockPos).getTemperature(blockPos) < 0.8F && blockState.canPlaceAt(instance.world, blockPos)) {
                     instance.world.setBlockState(blockPos, blockState);

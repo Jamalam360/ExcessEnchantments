@@ -13,25 +13,25 @@ public class WarpEnchantment extends Enchantment {
     Random random = new Random();
 
     public WarpEnchantment() {
-        super(Rarity.VERY_RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.VERY_RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
     @Override
-    public int getMinPower(int level){
+    public int getMinPower(int level) {
         return 5 + (level - 1) * 8;
     }
 
     @Override
-    public int getMaxLevel(){
+    public int getMaxLevel() {
         return 1;
     }
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        if(target instanceof LivingEntity) {
+        if (target instanceof LivingEntity) {
             double r = random.nextDouble();
 
-            if(r < 0.25) {
+            if (r < 0.25) {
                 ((ITeleportRandom) target).teleport();
             }
         }

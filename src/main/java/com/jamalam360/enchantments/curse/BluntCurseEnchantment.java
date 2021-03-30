@@ -7,7 +7,7 @@ import net.minecraft.entity.EquipmentSlot;
 
 public class BluntCurseEnchantment extends Enchantment {
     public BluntCurseEnchantment() {
-        super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
     @Override
@@ -36,7 +36,7 @@ public class BluntCurseEnchantment extends Enchantment {
     }
 
     @Override
-    public float getAttackDamage(int level, EntityGroup group){
+    public float getAttackDamage(int level, EntityGroup group) {
         return -5f;
     }
 }

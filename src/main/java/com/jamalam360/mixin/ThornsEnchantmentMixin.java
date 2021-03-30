@@ -14,7 +14,7 @@ public class ThornsEnchantmentMixin extends Enchantment {
     }
 
     @Override
-    public boolean canAccept(Enchantment other){
+    public boolean canAccept(Enchantment other) {
         return other != ExcessEnchantmentsInit.FIRE_THORNS;
     }
 }

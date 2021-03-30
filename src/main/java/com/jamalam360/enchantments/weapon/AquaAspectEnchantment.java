@@ -9,30 +9,30 @@ import net.minecraft.entity.EquipmentSlot;
 
 public class AquaAspectEnchantment extends Enchantment {
     public AquaAspectEnchantment() {
-        super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
     @Override
-    public int getMinPower(int level){
+    public int getMinPower(int level) {
         return 5 + (level - 1) * 8;
     }
 
     @Override
-    public int getMaxLevel(){
+    public int getMaxLevel() {
         return 5;
     }
 
     @Override
-    public float getAttackDamage(int level, EntityGroup group){
-        if(group == CustomEntityGroup.HURT_BY_WATER){
-            return (float)level * 2.5F;
-        } else{
+    public float getAttackDamage(int level, EntityGroup group) {
+        if (group == CustomEntityGroup.HURT_BY_WATER) {
+            return (float) level * 2.5F;
+        } else {
             return 0f;
         }
     }
 
     public boolean canAccept(Enchantment other) {
-        if(other instanceof DamageEnchantment){
+        if (other instanceof DamageEnchantment) {
             return false;
         } else return !(other instanceof ButcherEnchantment);
     }

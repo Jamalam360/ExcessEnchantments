@@ -51,12 +51,12 @@ public abstract class LivingEntityMixin extends Entity implements ISnowy, ITelep
     }
 
     @Inject(at = @At("TAIL"), method = "tickMovement()V")
-    public void tickMovement(CallbackInfo ci){
-        if(isTrailingSnow()){
-            if(this.trailSnowRemainingTicks <= 0){
+    public void tickMovement(CallbackInfo ci) {
+        if (isTrailingSnow()) {
+            if (this.trailSnowRemainingTicks <= 0) {
                 this.setTrailingSnow(false, 0);
                 return;
-            } else{
+            } else {
                 trailSnowRemainingTicks--;
             }
 
@@ -68,10 +68,10 @@ public abstract class LivingEntityMixin extends Entity implements ISnowy, ITelep
             int j = MathHelper.floor(instance.getY());
             int k = MathHelper.floor(instance.getZ());
 
-            for(int l = 0; l < 4; ++l) {
-                i = MathHelper.floor(instance.getX() + (double)((float)(l % 2 * 2 - 1) * 0.25F));
+            for (int l = 0; l < 4; ++l) {
+                i = MathHelper.floor(instance.getX() + (double) ((float) (l % 2 * 2 - 1) * 0.25F));
                 j = MathHelper.floor(instance.getY());
-                k = MathHelper.floor(instance.getZ() + (double)((float)(l / 2 % 2 * 2 - 1) * 0.25F));
+                k = MathHelper.floor(instance.getZ() + (double) ((float) (l / 2 % 2 * 2 - 1) * 0.25F));
                 BlockPos blockPos = new BlockPos(i, j, k);
                 if (instance.world.getBlockState(blockPos).isAir() && instance.world.getBiome(blockPos).getTemperature(blockPos) < 0.8F && blockState.canPlaceAt(instance.world, blockPos)) {
                     instance.world.setBlockState(blockPos, blockState);
@@ -90,7 +90,7 @@ public abstract class LivingEntityMixin extends Entity implements ISnowy, ITelep
 
         if (!this.world.isClient() && this.isAlive()) {
             double d = this.getX() + (this.random.nextDouble() - 0.5D) * 64.0D;
-            double e = this.getY() + (double)(this.random.nextInt(64) - 32);
+            double e = this.getY() + (double) (this.random.nextInt(64) - 32);
             double f = this.getZ() + (this.random.nextDouble() - 0.5D) * 64.0D;
             return this.teleportTo(d, e, f);
         } else {
@@ -101,7 +101,7 @@ public abstract class LivingEntityMixin extends Entity implements ISnowy, ITelep
     private boolean teleportTo(double x, double y, double z) {
         BlockPos.Mutable mutable = new BlockPos.Mutable(x, y, z);
 
-        while(mutable.getY() > 0 && !this.world.getBlockState(mutable).getMaterial().blocksMovement()) {
+        while (mutable.getY() > 0 && !this.world.getBlockState(mutable).getMaterial().blocksMovement()) {
             mutable.move(Direction.DOWN);
         }
 
@@ -111,7 +111,7 @@ public abstract class LivingEntityMixin extends Entity implements ISnowy, ITelep
         if (bl && !bl2) {
             boolean bl3 = this.teleport(x, y, z, true);
             if (bl3 && !this.isSilent()) {
-                this.world.playSound((PlayerEntity)null, this.prevX, this.prevY, this.prevZ, SoundEvents.ENTITY_ENDERMAN_TELEPORT, this.getSoundCategory(), 1.0F, 1.0F);
+                this.world.playSound((PlayerEntity) null, this.prevX, this.prevY, this.prevZ, SoundEvents.ENTITY_ENDERMAN_TELEPORT, this.getSoundCategory(), 1.0F, 1.0F);
                 this.playSound(SoundEvents.ENTITY_ENDERMAN_TELEPORT, 1.0F, 1.0F);
             }
 
@@ -134,7 +134,7 @@ public abstract class LivingEntityMixin extends Entity implements ISnowy, ITelep
         if (world.isChunkLoaded(blockPos)) {
             boolean bl2 = false;
 
-            while(!bl2 && blockPos.getY() > 0) {
+            while (!bl2 && blockPos.getY() > 0) {
                 BlockPos blockPos2 = blockPos.down();
                 BlockState blockState = world.getBlockState(blockPos2);
                 if (blockState.getMaterial().blocksMovement()) {
@@ -158,11 +158,11 @@ public abstract class LivingEntityMixin extends Entity implements ISnowy, ITelep
             return false;
         } else {
             if (particleEffects) {
-                world.sendEntityStatus(this, (byte)46);
+                world.sendEntityStatus(this, (byte) 46);
             }
 
             if (instance instanceof PathAwareEntity) {
-                ((PathAwareEntity)instance).getNavigation().stop();
+                ((PathAwareEntity) instance).getNavigation().stop();
             }
 
             return true;

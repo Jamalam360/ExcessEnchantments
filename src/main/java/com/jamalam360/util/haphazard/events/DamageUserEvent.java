@@ -10,7 +10,7 @@ public class DamageUserEvent extends HaphazardEvent {
     private final Random random = new Random();
 
     @Override
-    public void onAttack(LivingEntity user, Entity target, int enchantLevel){
+    public void onAttack(LivingEntity user, Entity target, int enchantLevel) {
         user.damage(DamageSource.GENERIC, random.nextInt(10));
     }
 }

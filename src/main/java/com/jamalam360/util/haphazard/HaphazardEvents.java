@@ -23,7 +23,7 @@ public class HaphazardEvents {
     public static HaphazardEvent getRandomEvent() {
         int rnd = random.nextInt(HAPHAZARD_EVENTS.length);
 
-        if(ExcessEnchantmentsInit.isHaphazardDebugMode){
+        if (ExcessEnchantmentsInit.isHaphazardDebugMode) {
             ExcessEnchantmentsInit.log(Level.INFO, new LiteralText("The selected haphazard event is " + HAPHAZARD_EVENTS[rnd].toString() + ". You are seeing this message because you have enabled Haphazard debug mode using /haphazarddebug true").getString());
         }
 

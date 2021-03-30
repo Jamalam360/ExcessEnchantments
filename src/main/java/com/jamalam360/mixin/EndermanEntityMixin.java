@@ -18,7 +18,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(EndermanEntity.class)
 public abstract class EndermanEntityMixin extends HostileEntity {
-    @Shadow protected abstract boolean teleportTo(double x, double y, double z);
+    @Shadow
+    protected abstract boolean teleportTo(double x, double y, double z);
 
     protected EndermanEntityMixin(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
@@ -30,11 +31,11 @@ public abstract class EndermanEntityMixin extends HostileEntity {
     }
 
     @Inject(at = @At("HEAD"), method = "damage(Lnet/minecraft/entity/damage/DamageSource;F)Z")
-    public void damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir){
-        if(source.getAttacker() instanceof PlayerEntity){
-            if(CustomEnchantmentHelper.hasAquaAspect(   ((PlayerEntity) source.getAttacker()).getStackInHand(Hand.MAIN_HAND) )){
+    public void damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+        if (source.getAttacker() instanceof PlayerEntity) {
+            if (CustomEnchantmentHelper.hasAquaAspect(((PlayerEntity) source.getAttacker()).getStackInHand(Hand.MAIN_HAND))) {
                 this.teleportRandomly();
-            } else if(CustomEnchantmentHelper.hasAquaAspect(   ((PlayerEntity) source.getAttacker()).getStackInHand(Hand.OFF_HAND) )){
+            } else if (CustomEnchantmentHelper.hasAquaAspect(((PlayerEntity) source.getAttacker()).getStackInHand(Hand.OFF_HAND))) {
                 this.teleportRandomly();
             }
         }
@@ -44,7 +45,7 @@ public abstract class EndermanEntityMixin extends HostileEntity {
     protected boolean teleportRandomly() {
         if (!this.world.isClient() && this.isAlive()) {
             double d = this.getX() + (this.random.nextDouble() - 0.5D) * 64.0D;
-            double e = this.getY() + (double)(this.random.nextInt(64) - 32);
+            double e = this.getY() + (double) (this.random.nextInt(64) - 32);
             double f = this.getZ() + (this.random.nextDouble() - 0.5D) * 64.0D;
             return this.teleportTo(d, e, f);
         } else {

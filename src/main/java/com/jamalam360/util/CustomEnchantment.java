@@ -15,10 +15,10 @@ public abstract class CustomEnchantment extends Enchantment {
     }
 
     @Override
-    public void onTargetDamaged(LivingEntity user, Entity target, int level){
+    public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         mojankFix = !mojankFix;
 
-        if(mojankFix){
+        if (mojankFix) {
             onTargetDamagedAlternate(user, target, level);
         }
     }

@@ -14,16 +14,16 @@ import java.util.function.Consumer;
 @SuppressWarnings("unchecked")
 public class FireThornsEnchantment extends Enchantment {
     public FireThornsEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.ARMOR, new EquipmentSlot[] {EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET});
+        super(Rarity.RARE, EnchantmentTarget.ARMOR, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET});
     }
 
     @Override
-    public int getMinPower(int level){
+    public int getMinPower(int level) {
         return 24;
     }
 
     @Override
-    public int getMaxLevel(){
+    public int getMaxLevel() {
         return 3;
     }
 
@@ -42,7 +42,7 @@ public class FireThornsEnchantment extends Enchantment {
             }
 
             if (entry != null) {
-                (entry.getValue()).damage(2, user, (Consumer)((livingEntity) -> ((LivingEntity)livingEntity).sendEquipmentBreakStatus(entry.getKey())));
+                (entry.getValue()).damage(2, user, (Consumer) ((livingEntity) -> ((LivingEntity) livingEntity).sendEquipmentBreakStatus(entry.getKey())));
             }
         }
 
@@ -52,7 +52,7 @@ public class FireThornsEnchantment extends Enchantment {
         if (level <= 0) {
             return false;
         } else {
-            return random.nextFloat() < 0.15F * (float)level;
+            return random.nextFloat() < 0.15F * (float) level;
         }
     }
 }

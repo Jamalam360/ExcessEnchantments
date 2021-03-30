@@ -121,8 +121,8 @@ public class ExcessEnchantmentsInit implements ModInitializer {
         log(Level.INFO, "Initializing");
     }
 
-    public static void log(Level level, String message){
-        LOGGER.log(level, "["+MOD_NAME+"] " + message);
+    public static void log(Level level, String message) {
+        LOGGER.log(level, "[" + MOD_NAME + "] " + message);
     }
 
 }

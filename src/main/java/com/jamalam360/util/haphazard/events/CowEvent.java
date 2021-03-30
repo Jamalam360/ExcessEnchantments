@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Level;
 
 public class CowEvent extends HaphazardEvent {
     @Override
-    public void onAttack(LivingEntity user, Entity target, int enchantLevel){
+    public void onAttack(LivingEntity user, Entity target, int enchantLevel) {
         for (int i = 0; i < 5; i++) {
             CowEntity cow = EntityType.COW.create(user.world);
             try {

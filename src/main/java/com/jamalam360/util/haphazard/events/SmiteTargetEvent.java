@@ -17,8 +17,8 @@ public class SmiteTargetEvent extends HaphazardEvent {
     private final SoundEvent soundEvent = SoundEvents.ITEM_TRIDENT_THUNDER;
 
     @Override
-    public void onAttack(LivingEntity user, Entity target, int enchantLevel){
-        if(!user.world.isClient) {
+    public void onAttack(LivingEntity user, Entity target, int enchantLevel) {
+        if (!user.world.isClient) {
             BlockPos blockPos = target.getBlockPos();
             LightningEntity lightningEntity = EntityType.LIGHTNING_BOLT.create(target.world);
             try {
@@ -26,7 +26,7 @@ public class SmiteTargetEvent extends HaphazardEvent {
             } catch (Exception e) {
                 ExcessEnchantmentsInit.log(Level.WARN, "Caught a NullPointerException handling SmiteUserEvent. In most cases this can be ignored");
             }
-            if(user instanceof PlayerEntity){
+            if (user instanceof PlayerEntity) {
                 lightningEntity.setChanneler((ServerPlayerEntity) user);
             }
 

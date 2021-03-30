@@ -6,7 +6,7 @@ import net.minecraft.entity.EquipmentSlot;
 
 public class SnowCurseEnchantment extends Enchantment {
     public SnowCurseEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
     @Override

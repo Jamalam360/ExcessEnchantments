@@ -14,14 +14,14 @@ import org.jetbrains.annotations.Nullable;
 
 public class CustomEnchantmentHelper {
     public static int getLevel(Enchantment enchantment, @Nullable ItemStack stack) {
-        if(stack != null){
+        if (stack != null) {
             if (stack.isEmpty()) {
                 return 0;
             } else {
                 Identifier identifier = Registry.ENCHANTMENT.getId(enchantment);
                 ListTag listTag = stack.getEnchantments();
 
-                for(int i = 0; i < listTag.size(); ++i) {
+                for (int i = 0; i < listTag.size(); ++i) {
                     CompoundTag compoundTag = listTag.getCompound(i);
                     Identifier identifier2 = Identifier.tryParse(compoundTag.getString("id"));
                     if (identifier2 != null && identifier2.equals(identifier)) {
@@ -31,15 +31,15 @@ public class CustomEnchantmentHelper {
 
                 return 0;
             }
-        } else{
+        } else {
             return 0;
         }
     }
 
     @Nullable
-    public static ItemStack getArmorItemFromIterable(Iterable<ItemStack> stackList, EquipmentSlot target){
-        for(ItemStack stack:stackList){
-            if(stack.getItem() instanceof ArmorItem) {
+    public static ItemStack getArmorItemFromIterable(Iterable<ItemStack> stackList, EquipmentSlot target) {
+        for (ItemStack stack : stackList) {
+            if (stack.getItem() instanceof ArmorItem) {
                 if (((ArmorItem) stack.getItem()).getSlotType() == target) {
                     return stack;
                 }

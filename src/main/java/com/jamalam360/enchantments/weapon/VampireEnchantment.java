@@ -8,7 +8,7 @@ import net.minecraft.entity.LivingEntity;
 
 public class VampireEnchantment extends Enchantment {
     public VampireEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
     @Override
@@ -23,7 +23,7 @@ public class VampireEnchantment extends Enchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        if(!target.isAlive()) {
+        if (!target.isAlive()) {
             user.setHealth(user.getHealth() + (0.5f * level));
         }
     }

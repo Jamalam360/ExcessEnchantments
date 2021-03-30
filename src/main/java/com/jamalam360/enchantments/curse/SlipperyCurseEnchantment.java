@@ -13,7 +13,7 @@ public class SlipperyCurseEnchantment extends Enchantment {
     private final Random random = new Random();
 
     public SlipperyCurseEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.BREAKABLE, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.BREAKABLE, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
     @Override
@@ -43,11 +43,11 @@ public class SlipperyCurseEnchantment extends Enchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        if(target instanceof LivingEntity) {
-            if(user instanceof PlayerEntity){
+        if (target instanceof LivingEntity) {
+            if (user instanceof PlayerEntity) {
                 double r = random.nextDouble();
 
-                if(r < 0.08){
+                if (r < 0.08) {
                     ((PlayerEntity) user).dropSelectedItem(true);
                 }
             }

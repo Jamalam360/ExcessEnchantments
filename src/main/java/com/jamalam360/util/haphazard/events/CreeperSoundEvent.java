@@ -6,7 +6,7 @@ import net.minecraft.sound.SoundEvents;
 
 public class CreeperSoundEvent extends HaphazardEvent {
     @Override
-    public void onAttack(LivingEntity user, Entity target, int enchantLevel){
+    public void onAttack(LivingEntity user, Entity target, int enchantLevel) {
         user.playSound(SoundEvents.ENTITY_CREEPER_PRIMED, 10f, 1.0f);
     }
 }

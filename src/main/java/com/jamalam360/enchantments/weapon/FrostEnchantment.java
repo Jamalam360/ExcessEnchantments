@@ -11,7 +11,7 @@ import net.minecraft.entity.effect.StatusEffects;
 
 public class FrostEnchantment extends Enchantment {
     public FrostEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
     @Override
@@ -26,7 +26,7 @@ public class FrostEnchantment extends Enchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        if(target instanceof LivingEntity) {
+        if (target instanceof LivingEntity) {
             ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 2 * level, (level - 1) / 2));
             ((ISnowy) target).setTrailingSnow(true, 20 * 2 * level);
         }

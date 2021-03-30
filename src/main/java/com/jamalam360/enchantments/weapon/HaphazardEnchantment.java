@@ -10,7 +10,7 @@ import net.minecraft.entity.LivingEntity;
 
 public class HaphazardEnchantment extends CustomEnchantment {
     public HaphazardEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
     @Override
@@ -25,7 +25,7 @@ public class HaphazardEnchantment extends CustomEnchantment {
 
     @Override
     public void onTargetDamagedAlternate(LivingEntity user, Entity target, int level) {
-        if(!user.world.isClient()) {
+        if (!user.world.isClient()) {
             System.out.println("Server");
             HaphazardEvent eventServerSide = HaphazardEvents.getRandomEvent();
             eventServerSide.onAttack(user, target, level);

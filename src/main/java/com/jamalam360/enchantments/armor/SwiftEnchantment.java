@@ -10,7 +10,7 @@ import net.minecraft.entity.LivingEntity;
 
 public class SwiftEnchantment extends Enchantment {
     public SwiftEnchantment() {
-        super(Rarity.VERY_RARE, EnchantmentTarget.ARMOR_FEET, new EquipmentSlot[] {EquipmentSlot.FEET});
+        super(Rarity.VERY_RARE, EnchantmentTarget.ARMOR_FEET, new EquipmentSlot[]{EquipmentSlot.FEET});
     }
 
     @Override
