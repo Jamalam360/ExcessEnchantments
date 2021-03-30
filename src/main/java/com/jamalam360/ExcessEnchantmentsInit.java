@@ -4,6 +4,7 @@ import com.jamalam360.enchantments.armor.FireThornsEnchantment;
 import com.jamalam360.enchantments.armor.LastStandEnchantment;
 import com.jamalam360.enchantments.armor.MarathonEnchantment;
 import com.jamalam360.enchantments.armor.SwiftEnchantment;
+import com.jamalam360.enchantments.breakable.SoulBoundEnchantment;
 import com.jamalam360.enchantments.curse.HungerCurseEnchantment;
 import com.jamalam360.enchantments.curse.SlipperyCurseEnchantment;
 import com.jamalam360.enchantments.curse.BluntCurseEnchantment;

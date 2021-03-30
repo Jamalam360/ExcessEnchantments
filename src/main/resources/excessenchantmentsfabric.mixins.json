@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "AnimalEntityMixin",
+    "ArmorFeatureRendererMixin",
     "BlazeEntityMixin",
     "EnderDragonEntityMixin",
     "EndermanEntityMixin",
