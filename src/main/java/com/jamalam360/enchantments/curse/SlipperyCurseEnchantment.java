@@ -1,4 +1,4 @@
-package com.jamalam360.enchantments.breakable;
+package com.jamalam360.enchantments.curse;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;

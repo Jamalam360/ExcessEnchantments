@@ -1,13 +1,12 @@
-package com.jamalam360.enchantments.weapon;
+package com.jamalam360.enchantments.curse;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
-import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.EquipmentSlot;
 
-public class BluntCurseEnchantment extends Enchantment {
-    public BluntCurseEnchantment() {
-        super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+public class SnowCurseEnchantment extends Enchantment {
+    public SnowCurseEnchantment() {
+        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
     }
 
     @Override
@@ -33,10 +32,5 @@ public class BluntCurseEnchantment extends Enchantment {
     @Override
     public boolean isCursed() {
         return true;
-    }
-
-    @Override
-    public float getAttackDamage(int level, EntityGroup group){
-        return -5f;
     }
 }

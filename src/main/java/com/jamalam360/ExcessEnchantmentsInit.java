@@ -1,8 +1,13 @@
 package com.jamalam360;
 
+import com.jamalam360.enchantments.armor.FireThornsEnchantment;
+import com.jamalam360.enchantments.armor.LastStandEnchantment;
 import com.jamalam360.enchantments.armor.MarathonEnchantment;
 import com.jamalam360.enchantments.armor.SwiftEnchantment;
-import com.jamalam360.enchantments.breakable.SlipperyCurseEnchantment;
+import com.jamalam360.enchantments.curse.HungerCurseEnchantment;
+import com.jamalam360.enchantments.curse.SlipperyCurseEnchantment;
+import com.jamalam360.enchantments.curse.BluntCurseEnchantment;
+import com.jamalam360.enchantments.curse.SnowCurseEnchantment;
 import com.jamalam360.enchantments.weapon.*;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.enchantment.Enchantment;
@@ -91,6 +96,24 @@ public class ExcessEnchantmentsInit implements ModInitializer {
             Registry.ENCHANTMENT,
             new Identifier(MOD_ID, "adrenalin"),
             new AdrenalinEnchantment()
+    );
+
+    public static Enchantment LAST_STAND = Registry.register(
+            Registry.ENCHANTMENT,
+            new Identifier(MOD_ID, "last_stand"),
+            new LastStandEnchantment()
+    );
+
+    public static Enchantment HUNGER_CURSE = Registry.register(
+            Registry.ENCHANTMENT,
+            new Identifier(MOD_ID, "hunger_curse"),
+            new HungerCurseEnchantment()
+    );
+
+    public static Enchantment FIRE_THORNS = Registry.register(
+            Registry.ENCHANTMENT,
+            new Identifier(MOD_ID, "fire_thorns"),
+            new FireThornsEnchantment()
     );
 
     @Override

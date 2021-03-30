@@ -35,7 +35,5 @@ public class WarpEnchantment extends Enchantment {
                 ((ITeleportRandom) target).teleport();
             }
         }
-
-        super.onTargetDamaged(user, target, level);
     }
 }

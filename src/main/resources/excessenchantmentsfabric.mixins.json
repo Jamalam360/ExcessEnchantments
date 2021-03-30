@@ -9,7 +9,8 @@
     "EndermanEntityMixin",
     "LivingEntityMixin",
     "MagmaCubeEntityMixin",
-    "PlayerEntityMixin"
+    "PlayerEntityMixin",
+    "ThornsEnchantmentMixin"
   ],
   "client": [],
   "server": [],

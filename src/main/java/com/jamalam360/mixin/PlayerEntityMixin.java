@@ -68,7 +68,7 @@ public class PlayerEntityMixin implements ISnowy {
     public void tickMovement(CallbackInfo ci){
         Iterable<ItemStack> armorIterable = ((PlayerEntity) (Object) this).getArmorItems();
         if(CustomEnchantmentHelper.hasSnowCurse(CustomEnchantmentHelper.getArmorItemFromIterable(armorIterable, EquipmentSlot.FEET))){
-            this.setTrailingSnow(true, 0);
+            this.setTrailingSnow(true, 10);
         }
 
         if(CustomEnchantmentHelper.hasSwift(CustomEnchantmentHelper.getArmorItemFromIterable(armorIterable, EquipmentSlot.FEET))){
