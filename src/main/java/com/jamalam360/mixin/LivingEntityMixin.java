@@ -1,17 +1,17 @@
 package com.jamalam360.mixin;
 
-import com.jamalam360.ExcessEnchantmentsInit;
-import com.jamalam360.util.CustomEnchantmentHelper;
+import com.jamalam360.util.IArmorInvisible;
 import com.jamalam360.util.ISnowy;
 import com.jamalam360.util.ITeleportRandom;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
@@ -19,12 +19,14 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity implements ISnowy, ITeleportRandom {
+    @Shadow private boolean effectsChanged;
     private boolean isTrailingSnow = false;
     private int trailSnowRemainingTicks;
 
@@ -47,6 +49,21 @@ public abstract class LivingEntityMixin extends Entity implements ISnowy, ITelep
         this.isTrailingSnow = shouldTrailSnow;
         if (shouldTrailSnow) {
             this.trailSnowRemainingTicks = time;
+        }
+    }
+
+    @Inject(at = @At("HEAD"), method = "onEquipStack(Lnet/minecraft/item/ItemStack;)V")
+    public void onEquipStack(ItemStack stack, CallbackInfo ci){
+        LivingEntity instance = ((LivingEntity) (Object) this);
+
+        System.out.println("onEquipStack");
+        if(!instance.world.isClient) {
+            if (stack.getItem() instanceof ArmorItem) {
+                ((IArmorInvisible) instance).setVisible(true);
+                System.out.println("LIVING ENTITY");
+            } else if (stack.isEmpty()) {
+                ((IArmorInvisible) instance).setVisible(false);
+            }
         }
     }
 

@@ -1,8 +1,0 @@
-Theme: Material Oceanic
-
-Plugins:
--Force Shortcuts
--Material Theme UI
--MC Dev
--RainbowBrackets
--WakaTime

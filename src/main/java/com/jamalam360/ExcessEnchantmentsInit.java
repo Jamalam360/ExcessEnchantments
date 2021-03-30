@@ -4,7 +4,6 @@ import com.jamalam360.enchantments.armor.FireThornsEnchantment;
 import com.jamalam360.enchantments.armor.LastStandEnchantment;
 import com.jamalam360.enchantments.armor.MarathonEnchantment;
 import com.jamalam360.enchantments.armor.SwiftEnchantment;
-import com.jamalam360.enchantments.breakable.SoulBoundEnchantment;
 import com.jamalam360.enchantments.curse.HungerCurseEnchantment;
 import com.jamalam360.enchantments.curse.SlipperyCurseEnchantment;
 import com.jamalam360.enchantments.curse.BluntCurseEnchantment;
@@ -114,6 +113,12 @@ public class ExcessEnchantmentsInit implements ModInitializer {
     public static Enchantment FIRE_THORNS = Registry.register(
             Registry.ENCHANTMENT,
             new Identifier(MOD_ID, "fire_thorns"),
+            new FireThornsEnchantment()
+    );
+
+    public static Enchantment INVISIBILITY = Registry.register(
+            Registry.ENCHANTMENT,
+            new Identifier(MOD_ID, "invisibility"),
             new FireThornsEnchantment()
     );
 
