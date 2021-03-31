@@ -6,6 +6,8 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.lang.reflect.Field;
+
 @SuppressWarnings("unused")
 public class ExcessEnchantmentsInit implements ModInitializer {
     public static boolean isHaphazardDebugMode = false;
@@ -18,8 +20,13 @@ public class ExcessEnchantmentsInit implements ModInitializer {
     @Override
     public void onInitialize() {
         log(Level.INFO, "Starting up ExcessEnchantments");
-        new EnchantmentRegistry();
-        log(Level.INFO, "Registered Enchantments Successfully");
+
+        EnchantmentRegistry enchantmentRegistry = new EnchantmentRegistry();
+        Class enchantmentRegistryClass = enchantmentRegistry.getClass();
+        Field[] fieldList=enchantmentRegistryClass.getDeclaredFields();
+
+
+        log(Level.INFO, "Registered " + fieldList.length + " Enchantments Successfully");
     }
 
     public static void log(Level level, String message) {
