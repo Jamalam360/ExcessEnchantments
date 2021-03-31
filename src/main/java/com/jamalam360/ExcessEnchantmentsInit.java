@@ -31,7 +31,7 @@ public class ExcessEnchantmentsInit implements ModInitializer {
     public void onInitialize() {
         log(Level.INFO, "Starting up ExcessEnchantments");
         new EnchantmentRegistry();
-        log(Level.INFO, "Registered Enchantments Successsfully");
+        log(Level.INFO, "Registered Enchantments Successfully");
     }
 
     public static void log(Level level, String message) {
