@@ -1,7 +1,7 @@
 package com.jamalam360.mixin;
 
-import com.jamalam360.util.ISnowy;
-import com.jamalam360.util.ITeleportRandom;
+import com.jamalam360.util.interfaces.ISnowy;
+import com.jamalam360.util.interfaces.ITeleportRandom;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;

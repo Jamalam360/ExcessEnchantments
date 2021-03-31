@@ -3,12 +3,12 @@
   "package": "com.jamalam360.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "AnimalEntityMixin",
-    "BlazeEntityMixin",
-    "EnderDragonEntityMixin",
-    "EndermanEntityMixin",
+    "entitygroup.AnimalEntityMixin",
+    "entitygroup.BlazeEntityMixin",
+    "entitygroup.EnderDragonEntityMixin",
+    "entitygroup.EndermanEntityMixin",
     "LivingEntityMixin",
-    "MagmaCubeEntityMixin",
+    "entitygroup.MagmaCubeEntityMixin",
     "PlayerEntityMixin",
     "ThornsEnchantmentMixin"
   ],

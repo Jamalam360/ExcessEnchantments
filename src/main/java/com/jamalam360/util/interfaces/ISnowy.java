@@ -1,4 +1,4 @@
-package com.jamalam360.util;
+package com.jamalam360.util.interfaces;
 
 //Allows entities that implement this interface to trail snow like a snow golem. This is a duck interface
 public interface ISnowy {

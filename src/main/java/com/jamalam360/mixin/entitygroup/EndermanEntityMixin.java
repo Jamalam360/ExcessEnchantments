@@ -1,4 +1,4 @@
-package com.jamalam360.mixin;
+package com.jamalam360.mixin.entitygroup;
 
 import com.jamalam360.util.CustomEnchantmentHelper;
 import com.jamalam360.util.CustomEntityGroup;

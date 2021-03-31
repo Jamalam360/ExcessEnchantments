@@ -1,6 +1,6 @@
 package com.jamalam360.enchantments.weapon;
 
-import com.jamalam360.util.ISnowy;
+import com.jamalam360.util.interfaces.ISnowy;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;

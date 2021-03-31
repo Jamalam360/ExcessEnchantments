@@ -2,7 +2,7 @@ package com.jamalam360.mixin;
 
 import com.jamalam360.util.CustomEnchantmentHelper;
 import com.jamalam360.util.EnchantmentRegistry;
-import com.jamalam360.util.ISnowy;
+import com.jamalam360.util.interfaces.ISnowy;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
