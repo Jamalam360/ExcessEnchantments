@@ -64,4 +64,8 @@ public class CustomEnchantmentHelper {
     public static boolean hasSwift(ItemStack stack) {
         return getLevel(ExcessEnchantmentsInit.SWIFT, stack) > 0;
     }
+
+    public static boolean hasInvis(ItemStack stack) {
+        return getLevel(ExcessEnchantmentsInit.INVISIBILITY, stack) > 0;
+    }
 }
