@@ -1,6 +1,7 @@
 package com.jamalam360.enchantments.armor;
 
 import com.jamalam360.ExcessEnchantmentsInit;
+import com.jamalam360.util.EnchantmentRegistry;
 import net.minecraft.enchantment.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
@@ -35,7 +36,7 @@ public class FireThornsEnchantment extends Enchantment {
     @Override
     public void onUserDamaged(LivingEntity user, Entity attacker, int level) {
         Random random = user.getRandom();
-        Map.Entry<EquipmentSlot, ItemStack> entry = EnchantmentHelper.chooseEquipmentWith(ExcessEnchantmentsInit.FIRE_THORNS, user);
+        Map.Entry<EquipmentSlot, ItemStack> entry = EnchantmentHelper.chooseEquipmentWith(EnchantmentRegistry.FIRE_THORNS, user);
         if (shouldDamageAttacker(level, random)) {
             if (attacker != null) {
                 attacker.setOnFireFor(level);

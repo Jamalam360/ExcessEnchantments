@@ -50,22 +50,18 @@ public class CustomEnchantmentHelper {
     }
 
     public static boolean hasAquaAspect(ItemStack stack) {
-        return getLevel(ExcessEnchantmentsInit.AQUA_ASPECT, stack) > 0;
+        return getLevel(EnchantmentRegistry.AQUA_ASPECT, stack) > 0;
     }
 
     public static boolean hasMarathon(ItemStack stack) {
-        return getLevel(ExcessEnchantmentsInit.MARATHON, stack) > 0;
+        return getLevel(EnchantmentRegistry.MARATHON, stack) > 0;
     }
 
     public static boolean hasSnowCurse(ItemStack stack) {
-        return getLevel(ExcessEnchantmentsInit.SNOW_CURSE, stack) > 0;
+        return getLevel(EnchantmentRegistry.SNOW_CURSE, stack) > 0;
     }
 
     public static boolean hasSwift(ItemStack stack) {
-        return getLevel(ExcessEnchantmentsInit.SWIFT, stack) > 0;
-    }
-
-    public static boolean hasInvis(ItemStack stack) {
-        return getLevel(ExcessEnchantmentsInit.INVISIBILITY, stack) > 0;
+        return getLevel(EnchantmentRegistry.SWIFT, stack) > 0;
     }
 }

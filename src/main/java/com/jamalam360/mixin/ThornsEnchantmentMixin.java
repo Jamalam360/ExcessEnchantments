@@ -1,6 +1,7 @@
 package com.jamalam360.mixin;
 
 import com.jamalam360.ExcessEnchantmentsInit;
+import com.jamalam360.util.EnchantmentRegistry;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.enchantment.ThornsEnchantment;
@@ -15,6 +16,6 @@ public class ThornsEnchantmentMixin extends Enchantment {
 
     @Override
     public boolean canAccept(Enchantment other) {
-        return other != ExcessEnchantmentsInit.FIRE_THORNS;
+        return other != EnchantmentRegistry.FIRE_THORNS;
     }
 }
