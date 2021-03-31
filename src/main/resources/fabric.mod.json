@@ -16,7 +16,7 @@
     "main": [
       "com.jamalam360.ExcessEnchantmentsInit"
     ],
-    "client": [],
+    "client": ["com.jamalam360.ClientInit"],
     "server": []
   },
   "mixins": [

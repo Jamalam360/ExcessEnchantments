@@ -17,24 +17,20 @@ public class ExcessEnchantmentsInit implements ModInitializer {
 
     public static final String MOD_ID = "excessenchantmentsfabric";
     public static final String MOD_NAME = "Excess Enchantments";
-    public static final String MOD_VERSION = "1.1.0";
+    public static final String MOD_VERSION = "1.0.0";
 
-    public boolean versionCorrect = true;
+    public static boolean versionCorrect = true;
 
     @Override
     public void onInitialize() {
         try {
             String strRemote = VersionChecker.getGithubResponse();
 
-            if(strRemote.trim().equals(MOD_VERSION)){
-                versionCorrect = true;
-            } else {
-                versionCorrect = false;
-            }
+            versionCorrect = strRemote.trim().equals(MOD_VERSION);
 
             if(versionCorrect){
                 log(Level.INFO, "Excess Enchantments version is up to date!");
-            } else{
+            } else {
                 log(Level.WARN, "Excess Enchantments is out of date. Latest version is " + strRemote + " while you have version " + MOD_VERSION);
             }
         } catch (Throwable throwable) {
