@@ -52,7 +52,5 @@ public class SlipperyCurseEnchantment extends Enchantment {
                 }
             }
         }
-
-        super.onTargetDamaged(user, target, level);
     }
 }

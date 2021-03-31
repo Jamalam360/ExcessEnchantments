@@ -116,12 +116,6 @@ public class ExcessEnchantmentsInit implements ModInitializer {
             new FireThornsEnchantment()
     );
 
-    public static Enchantment INVISIBILITY = Registry.register(
-            Registry.ENCHANTMENT,
-            new Identifier(MOD_ID, "invisibility"),
-            new FireThornsEnchantment()
-    );
-
     @Override
     public void onInitialize() {
         log(Level.INFO, "Initializing");

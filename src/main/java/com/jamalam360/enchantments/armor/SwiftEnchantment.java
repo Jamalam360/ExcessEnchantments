@@ -1,12 +1,8 @@
 package com.jamalam360.enchantments.armor;
 
-import com.jamalam360.util.haphazard.HaphazardEvents;
-import com.jamalam360.util.haphazard.events.HaphazardEvent;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
 
 public class SwiftEnchantment extends Enchantment {
     public SwiftEnchantment() {

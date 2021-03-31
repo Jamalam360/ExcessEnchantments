@@ -26,7 +26,6 @@ public class AdrenalinEnchantment extends CustomEnchantment {
     public void onTargetDamagedAlternate(LivingEntity user, Entity target, int level) {
         if (user.getHealth() < user.getMaxHealth() * 0.3) { //If user has less than 30% of their full health
             target.damage(DamageSource.GENERIC, this.getAttackDamage(level, ((LivingEntity) target).getGroup()) * 1.5f);
-            System.out.println("TEST");
         }
     }
 }
