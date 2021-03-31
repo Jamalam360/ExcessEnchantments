@@ -1,6 +1,7 @@
 package com.jamalam360;
 
 import com.jamalam360.util.EnchantmentRegistry;
+import com.jamalam360.util.githubversionchecker.VersionChecker;
 import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -16,9 +17,30 @@ public class ExcessEnchantmentsInit implements ModInitializer {
 
     public static final String MOD_ID = "excessenchantmentsfabric";
     public static final String MOD_NAME = "Excess Enchantments";
+    public static final String MOD_VERSION = "1.1.0";
+
+    public boolean versionCorrect = true;
 
     @Override
     public void onInitialize() {
+        try {
+            String strRemote = VersionChecker.getGithubResponse();
+
+            if(strRemote.trim().equals(MOD_VERSION)){
+                versionCorrect = true;
+            } else {
+                versionCorrect = false;
+            }
+
+            if(versionCorrect){
+                log(Level.INFO, "Excess Enchantments version is up to date!");
+            } else{
+                log(Level.WARN, "Excess Enchantments is out of date. Latest version is " + strRemote + " while you have version " + MOD_VERSION);
+            }
+        } catch (Throwable throwable) {
+            log(Level.WARN, throwable.toString());
+        }
+
         log(Level.INFO, "Starting up ExcessEnchantments");
 
         EnchantmentRegistry enchantmentRegistry = new EnchantmentRegistry();
