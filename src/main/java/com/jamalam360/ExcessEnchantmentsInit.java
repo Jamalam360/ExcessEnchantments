@@ -17,21 +17,22 @@ public class ExcessEnchantmentsInit implements ModInitializer {
 
     public static final String MOD_ID = "excessenchantmentsfabric";
     public static final String MOD_NAME = "Excess Enchantments";
-    public static final String MOD_VERSION = "1.0.0";
+    public static final String MOD_VERSION = "1.1.0";
+    public static String remoteModVersion;
 
     public static boolean versionCorrect = true;
 
     @Override
     public void onInitialize() {
         try {
-            String strRemote = VersionChecker.getGithubResponse();
+            remoteModVersion = VersionChecker.getGithubResponse();
 
-            versionCorrect = strRemote.trim().equals(MOD_VERSION);
+            versionCorrect = remoteModVersion.trim().equals(MOD_VERSION);
 
             if(versionCorrect){
                 log(Level.INFO, "Excess Enchantments version is up to date!");
             } else {
-                log(Level.WARN, "Excess Enchantments is out of date. Latest version is " + strRemote + " while you have version " + MOD_VERSION);
+                log(Level.WARN, "Excess Enchantments is out of date. Latest version is " + remoteModVersion + " while you have version " + MOD_VERSION);
             }
         } catch (Throwable throwable) {
             log(Level.WARN, throwable.toString());
@@ -46,7 +47,7 @@ public class ExcessEnchantmentsInit implements ModInitializer {
 
         log(Level.INFO, "Registered " + fieldList.length + " Enchantments Successfully");
     }
-
+wget
     public static void log(Level level, String message) {
         LOGGER.log(level, "[" + MOD_NAME + "] " + message);
     }

@@ -2,7 +2,9 @@ package com.jamalam360;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
+import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
+import net.minecraft.text.TextColor;
 
 public class ClientInit implements ClientModInitializer {
 
@@ -10,7 +12,11 @@ public class ClientInit implements ClientModInitializer {
     public void onInitializeClient() {
         ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> {
             if(!ExcessEnchantmentsInit.versionCorrect) {
-                client.player.sendMessage(Text.of("Excess Enchantments is out of date, please update it to the latest version"), false);
+                Text outOfDateMessage = new LiteralText("Excess Enchantments is out of date, please update it to v" + ExcessEnchantmentsInit.remoteModVersion).styled(s -> s.withColor(TextColor.parse("#00cc00")).withBold(true).withItalic(true));
+
+                if (client.player != null) {
+                    client.player.sendMessage(outOfDateMessage, false);
+                }
             }
         });
     }
