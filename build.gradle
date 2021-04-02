@@ -23,6 +23,9 @@ repositories {
 	maven {
 		url "https://maven.shedaniel.me/"
 	}
+	maven {
+		url = "https://minecraft.guntram.de/maven/"
+	}
 }
 
 dependencies {
@@ -35,6 +38,9 @@ dependencies {
 
 	modImplementation 'com.oroarmor:oro-config:1.2.0'
 	include 'com.oroarmor:oro-config:1.2.0'
+
+	modImplementation "de.guntram.mcmod:crowdin-translate:1.2"
+	include "de.guntram.mcmod:crowdin-translate:1.2"
 }
 
 processResources {

@@ -19,7 +19,6 @@ import static net.minecraft.util.registry.Registry.ENCHANTMENT;
 import static net.minecraft.util.registry.Registry.register;
 import static com.jamalam360.config.EEConfig.ConfigGroupEnabledEnchantments;
 
-@SuppressWarnings("unused")
 public class EnchantmentRegistry {
     private static final String MOD_ID = ExcessEnchantmentsInit.MOD_ID;
     private final Config CONFIG = ExcessEnchantmentsInit.CONFIG;
