@@ -13,6 +13,18 @@ group = project.maven_group
 minecraft {
 }
 
+repositories {
+	maven {
+		url "https://maven.terraformersmc.com/releases/"
+	}
+	maven {
+		url "https://dl.bintray.com/oroarmor/oroarmor"
+	}
+	maven {
+		url "https://maven.shedaniel.me/"
+	}
+}
+
 dependencies {
 	//to change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -20,6 +32,9 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	modImplementation 'com.oroarmor:oro-config:1.2.0'
+	include 'com.oroarmor:oro-config:1.2.0'
 }
 
 processResources {

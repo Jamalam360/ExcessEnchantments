@@ -17,7 +17,8 @@
       "com.jamalam360.ExcessEnchantmentsInit"
     ],
     "client": ["com.jamalam360.ClientInit"],
-    "server": []
+    "server": [],
+    "modmenu": ["com.jamalam360.config.ModMenuIntegration"]
   },
   "mixins": [
     "excessenchantmentsfabric.mixins.json"

@@ -10,6 +10,7 @@ import com.jamalam360.enchantments.curse.HungerCurseEnchantment;
 import com.jamalam360.enchantments.curse.SlipperyCurseEnchantment;
 import com.jamalam360.enchantments.curse.SnowCurseEnchantment;
 import com.jamalam360.enchantments.weapon.*;
+import com.oroarmor.config.Config;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -17,7 +18,8 @@ import net.minecraft.util.registry.Registry;
 @SuppressWarnings("unused")
 public class EnchantmentRegistry {
     private static final String MOD_ID = ExcessEnchantmentsInit.MOD_ID;
-
+    private static final Config CONFIG = ExcessEnchantmentsInit.CONFIG;
+    
     public static Enchantment AQUA_ASPECT = Registry.register(
             Registry.ENCHANTMENT,
             new Identifier(MOD_ID, "aqua_aspect"),
@@ -113,5 +115,4 @@ public class EnchantmentRegistry {
             new Identifier(MOD_ID, "aerial"),
             new AerialEnchantment()
     );
-
 }

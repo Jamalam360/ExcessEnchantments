@@ -1,8 +1,13 @@
 package com.jamalam360;
 
+import com.jamalam360.config.EEConfig;
 import com.jamalam360.util.EnchantmentRegistry;
 import com.jamalam360.util.githubversionchecker.VersionChecker;
+import com.oroarmor.config.Config;
+import com.oroarmor.config.command.ConfigCommand;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,6 +18,7 @@ import java.lang.reflect.Field;
 public class ExcessEnchantmentsInit implements ModInitializer {
     public static boolean isHaphazardDebugMode = false;
 
+    public static Config CONFIG = new EEConfig();
     public static Logger LOGGER = LogManager.getLogger();
 
     public static final String MOD_ID = "excessenchantmentsfabric";
@@ -44,6 +50,9 @@ public class ExcessEnchantmentsInit implements ModInitializer {
         Class enchantmentRegistryClass = enchantmentRegistry.getClass();
         Field[] fieldList=enchantmentRegistryClass.getDeclaredFields();
 
+        CONFIG.readConfigFromFile();
+        ServerLifecycleEvents.SERVER_STOPPED.register(instance -> CONFIG.saveConfigToFile());
+        CommandRegistrationCallback.EVENT.register(new ConfigCommand(CONFIG)::register);
 
         log(Level.INFO, "Registered " + fieldList.length + " Enchantments Successfully");
     }
