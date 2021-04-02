@@ -47,7 +47,7 @@ public class ExcessEnchantmentsInit implements ModInitializer {
 
         log(Level.INFO, "Registered " + fieldList.length + " Enchantments Successfully");
     }
-wget
+
     public static void log(Level level, String message) {
         LOGGER.log(level, "[" + MOD_NAME + "] " + message);
     }
