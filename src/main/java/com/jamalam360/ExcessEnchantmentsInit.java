@@ -30,6 +30,9 @@ public class ExcessEnchantmentsInit implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        log(Level.INFO, "Starting up ExcessEnchantments");
+
+        //region Checking version and logging the result
         try {
             remoteModVersion = VersionChecker.getGithubResponse();
 
@@ -43,18 +46,24 @@ public class ExcessEnchantmentsInit implements ModInitializer {
         } catch (Throwable throwable) {
             log(Level.WARN, throwable.toString());
         }
+        //endregion
 
-        log(Level.INFO, "Starting up ExcessEnchantments");
-
+        //region Registering Enchantments
         EnchantmentRegistry enchantmentRegistry = new EnchantmentRegistry();
-        Class enchantmentRegistryClass = enchantmentRegistry.getClass();
-        Field[] fieldList=enchantmentRegistryClass.getDeclaredFields();
+        enchantmentRegistry.registerEnchantments();
+        //endregion
 
+        //region Config Init
         CONFIG.readConfigFromFile();
         ServerLifecycleEvents.SERVER_STOPPED.register(instance -> CONFIG.saveConfigToFile());
         CommandRegistrationCallback.EVENT.register(new ConfigCommand(CONFIG)::register);
+        //endregion
 
+        //region Calculating number of registered enchantments and outputting the result
+        Class enchantmentRegistryClass = enchantmentRegistry.getClass();
+        Field[] fieldList=enchantmentRegistryClass.getDeclaredFields();
         log(Level.INFO, "Registered " + fieldList.length + " Enchantments Successfully");
+        //endregion
     }
 
     public static void log(Level level, String message) {

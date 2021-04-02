@@ -1,14 +1,17 @@
 {
   "schemaVersion": 1,
   "id": "excessenchantmentsfabric",
-  "version": "${version}",
+  "version": "2.0.0",
   "name": "Excess Enchantments",
   "description": "Adds loads of enchantments",
   "authors": [
     "Jamalam360"
   ],
   "contributors": [],
-  "contact": {},
+  "contact": {
+    "homepage": "https://github.com/Jamalam360/ExcessEnchantments",
+    "issues": "https://github.com/Jamalam360/ExcessEnchantments/issues"
+  },
   "license": "MIT",
   "icon": "assets/excessenchantmentsfabric/icon.png",
   "environment": "*",
@@ -26,5 +29,22 @@
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*"
+  },
+  "custom": {
+    "modupdater": {
+      "strategy": "curseforge",
+      "projectID": 462469,
+      "strict": false
+    },
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/jEGF5fb"
+      },
+      "parent": {
+        "id": "excessenchantmentsfabric",
+        "name": "Excess Enchantments",
+        "description": "Adds loads of enchantments!"
+      }
+    }
   }
 }

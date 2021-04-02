@@ -1,4 +1,5 @@
 {
+  "config.jamalam360_config_excessenchantments" : "Excess Enchantments Config",
   "enchantment.excessenchantmentsfabric.aqua_aspect": "Aqua Aspect",
   "enchantment.excessenchantmentsfabric.marathon": "Marathon",
   "enchantment.excessenchantmentsfabric.frost": "Frost",
@@ -15,5 +16,4 @@
   "enchantment.excessenchantmentsfabric.hunger_curse": "Curse of Hunger",
   "enchantment.excessenchantmentsfabric.fire_thorns": "Fire Strike",
   "enchantment.excessenchantmentsfabric.aerial": "Aerial"
-
 }
