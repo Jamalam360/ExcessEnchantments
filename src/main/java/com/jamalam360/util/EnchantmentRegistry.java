@@ -39,6 +39,7 @@ public class EnchantmentRegistry {
     public static Enchantment HUNGER_CURSE;
     public static Enchantment FIRE_THORNS;
     public static Enchantment AERIAL;
+    public static Enchantment DISARM;
 
     public void registerEnchantments() {
         CONFIG.readConfigFromFile();
@@ -168,6 +169,14 @@ public class EnchantmentRegistry {
                     ENCHANTMENT,
                     idOf("aerial"),
                     new AerialEnchantment()
+            );
+        }
+
+        if(getValue(ConfigGroupEnabledEnchantments.AERIAL_ENABLED)) {
+            DISARM = register(
+                    ENCHANTMENT,
+                    idOf("disarm"),
+                    new DisarmEnchantment()
             );
         }
     }
