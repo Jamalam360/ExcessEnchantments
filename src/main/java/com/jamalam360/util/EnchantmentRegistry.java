@@ -1,10 +1,7 @@
 package com.jamalam360.util;
 
 import com.jamalam360.ExcessEnchantmentsInit;
-import com.jamalam360.enchantments.armor.FireThornsEnchantment;
-import com.jamalam360.enchantments.armor.LastStandEnchantment;
-import com.jamalam360.enchantments.armor.MarathonEnchantment;
-import com.jamalam360.enchantments.armor.SwiftEnchantment;
+import com.jamalam360.enchantments.armor.*;
 import com.jamalam360.enchantments.curse.BluntCurseEnchantment;
 import com.jamalam360.enchantments.curse.HungerCurseEnchantment;
 import com.jamalam360.enchantments.curse.SlipperyCurseEnchantment;
@@ -40,6 +37,7 @@ public class EnchantmentRegistry {
     public static Enchantment FIRE_THORNS;
     public static Enchantment AERIAL;
     public static Enchantment DISARM;
+    public static Enchantment EMISSIVE;
 
     public void registerEnchantments() {
         CONFIG.readConfigFromFile();
@@ -179,6 +177,15 @@ public class EnchantmentRegistry {
                     new DisarmEnchantment()
             );
         }
+
+        if(getValue(ConfigGroupEnabledEnchantments.EMISSIVE_ENABLED)) {
+            EMISSIVE = register(
+                    ENCHANTMENT,
+                    idOf("emissive"),
+                    new EmissiveEnchantment()
+            );
+        }
+
     }
 
     public Identifier idOf(String name){

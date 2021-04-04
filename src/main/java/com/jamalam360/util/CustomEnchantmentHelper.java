@@ -1,6 +1,5 @@
 package com.jamalam360.util;
 
-import com.jamalam360.ExcessEnchantmentsInit;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
@@ -63,5 +62,9 @@ public class CustomEnchantmentHelper {
 
     public static boolean hasSwift(ItemStack stack) {
         return getLevel(EnchantmentRegistry.SWIFT, stack) > 0;
+    }
+
+    public static boolean hasEmissive(ItemStack stack) {
+        return getLevel(EnchantmentRegistry.EMISSIVE, stack) > 0;
     }
 }

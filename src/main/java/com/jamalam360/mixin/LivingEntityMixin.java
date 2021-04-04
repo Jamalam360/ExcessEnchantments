@@ -1,19 +1,25 @@
 package com.jamalam360.mixin;
 
+import com.jamalam360.util.CustomEnchantmentHelper;
 import com.jamalam360.util.interfaces.ISnowy;
 import com.jamalam360.util.interfaces.ITeleportRandom;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -43,6 +49,16 @@ public abstract class LivingEntityMixin extends Entity implements ISnowy, ITelep
         this.isTrailingSnow = shouldTrailSnow;
         if (shouldTrailSnow) {
             this.trailSnowRemainingTicks = time;
+        }
+    }
+
+    @Inject(at = @At("TAIL"), method = "tick()V")
+    public void tick(CallbackInfo ci){
+        Iterable<ItemStack> armorIterable = ((LivingEntity) (Object) this).getArmorItems();
+        @Nullable ItemStack armorFeet = CustomEnchantmentHelper.getArmorItemFromIterable(armorIterable, EquipmentSlot.HEAD);
+
+        if(CustomEnchantmentHelper.hasEmissive(armorFeet)){
+            ((LivingEntity) (Object) this).addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 25, 1, false, false, false));
         }
     }
 

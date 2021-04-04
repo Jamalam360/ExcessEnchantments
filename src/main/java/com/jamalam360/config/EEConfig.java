@@ -36,11 +36,12 @@ public class EEConfig extends com.oroarmor.config.Config {
         public static final ConfigItem<Boolean> FIRE_THORNS_ENABLED = new ConfigItem<>("fireThorns", true, "Fire Thorns Enabled");
         public static final ConfigItem<Boolean> AERIAL_ENABLED = new ConfigItem<>("aerial", true, "Aerial Enabled");
         public static final ConfigItem<Boolean> DISARM_ENABLED = new ConfigItem<>("disarm", true, "Disarm Enabled");
+        public static final ConfigItem<Boolean> EMISSIVE_ENABLED = new ConfigItem<>("emissive", true, "Emissive Enabled");
 
         public ConfigGroupEnabledEnchantments() {
             super(of(AQUA_ASPECT_ENABLED, MARATHON_ENABLED, FROST_ENABLED, SNOW_CURSE_ENABLED, BLUNT_CURSE_ENABLED, BUTCHER_ENABLED,
                     WARP_ENABLED, SLIPPERY_CURSE_ENABLED, HAPHAZARD_ENABLED, SWIFT_ENABLED, VAMPIRE_ENABLED, ADRENALIN_ENABLED,
-                    LAST_STAND_ENABLED, HUNGER_CURSE_ENABLED, FIRE_THORNS_ENABLED, AERIAL_ENABLED, DISARM_ENABLED), "enchantments");
+                    LAST_STAND_ENABLED, HUNGER_CURSE_ENABLED, FIRE_THORNS_ENABLED, AERIAL_ENABLED, DISARM_ENABLED, EMISSIVE_ENABLED), "enchantments");
         }
     }
 }
