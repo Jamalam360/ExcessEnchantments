@@ -38,6 +38,7 @@ public class EnchantmentRegistry {
     public static Enchantment AERIAL;
     public static Enchantment DISARM;
     public static Enchantment EMISSIVE;
+    public static Enchantment STRIKE;
 
     public void registerEnchantments() {
         CONFIG.readConfigFromFile();
@@ -186,6 +187,13 @@ public class EnchantmentRegistry {
             );
         }
 
+        if(getValue(ConfigGroupEnabledEnchantments.STRIKE_ENABLED)) {
+            STRIKE = register(
+                    ENCHANTMENT,
+                    idOf("strike"),
+                    new StrikeEnchantment()
+            );
+        }
     }
 
     public Identifier idOf(String name){

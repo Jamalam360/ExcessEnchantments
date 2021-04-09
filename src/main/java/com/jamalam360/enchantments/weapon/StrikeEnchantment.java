@@ -1,25 +1,24 @@
 package com.jamalam360.enchantments.weapon;
 
+import com.jamalam360.util.SmiteHelper;
 import com.jamalam360.util.CustomEnchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Hand;
 
 import java.util.Random;
 
-public class DisarmEnchantment extends CustomEnchantment {
+public class StrikeEnchantment extends CustomEnchantment {
     private final Random random = new Random();
 
-    public DisarmEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
+    public StrikeEnchantment() {
+        super(Rarity.VERY_RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
     @Override
     public int getMinPower(int level) {
-        return 22;
+        return 26;
     }
 
     @Override
@@ -29,13 +28,10 @@ public class DisarmEnchantment extends CustomEnchantment {
 
     @Override
     public void onTargetDamagedAlternate(LivingEntity user, Entity target, int level) {
-        if(target instanceof LivingEntity){
-            double r = random.nextDouble();
+        double r = random.nextDouble();
 
-            if(r < 0.05){
-                target.dropStack(((LivingEntity) target).getMainHandStack());
-                ((LivingEntity) target).setStackInHand(Hand.MAIN_HAND, ItemStack.EMPTY);
-            }
+        if(r < 0.08 * level){
+            SmiteHelper.smiteTarget(user, target);
         }
     }
 }
