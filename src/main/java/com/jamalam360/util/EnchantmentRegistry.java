@@ -194,6 +194,8 @@ public class EnchantmentRegistry {
                     new StrikeEnchantment()
             );
         }
+
+
     }
 
     public Identifier idOf(String name){

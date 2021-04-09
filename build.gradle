@@ -24,7 +24,11 @@ repositories {
 		url "https://maven.shedaniel.me/"
 	}
 	maven {
-		url = "https://minecraft.guntram.de/maven/"
+		url "https://minecraft.guntram.de/maven/"
+	}
+
+	maven {
+		url "https://jitpack.io"
 	}
 }
 
@@ -41,6 +45,7 @@ dependencies {
 
 	modImplementation "de.guntram.mcmod:crowdin-translate:1.2"
 	include "de.guntram.mcmod:crowdin-translate:1.2"
+	modImplementation "com.github.CrimsonDawn45:Fabric-Shield-Lib:${project.fabric_shield_lib_version}-${project.minecraft_version}"
 }
 
 processResources {
