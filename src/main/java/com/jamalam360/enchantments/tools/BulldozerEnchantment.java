@@ -1,21 +1,21 @@
-package com.jamalam360.enchantments.armor;
+package com.jamalam360.enchantments.tools;
 
 import com.jamalam360.util.SlotArrays;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 
-public class MarathonEnchantment extends Enchantment {
-    public MarathonEnchantment() {
-        super(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR_FEET, SlotArrays.FEET);
+public class BulldozerEnchantment extends Enchantment {
+    public BulldozerEnchantment() {
+        super(Rarity.VERY_RARE, EnchantmentTarget.DIGGER, SlotArrays.BOTH_HANDS);
     }
 
     @Override
     public int getMinPower(int level) {
-        return 20;
+        return 26;
     }
 
     @Override
     public int getMaxLevel() {
-        return 1;
+        return 2;
     }
 }

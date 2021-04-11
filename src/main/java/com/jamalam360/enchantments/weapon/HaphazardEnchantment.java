@@ -1,16 +1,16 @@
 package com.jamalam360.enchantments.weapon;
 
-import com.jamalam360.util.CustomEnchantment;
+import com.jamalam360.util.SlotArrays;
+import com.jamalam360.util.enchantment.CustomEnchantment;
 import com.jamalam360.util.haphazard.HaphazardEvents;
 import com.jamalam360.util.haphazard.events.HaphazardEvent;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 
 public class HaphazardEnchantment extends CustomEnchantment {
     public HaphazardEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.WEAPON, SlotArrays.BOTH_HANDS);
     }
 
     @Override

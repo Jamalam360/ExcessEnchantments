@@ -67,4 +67,8 @@ public class CustomEnchantmentHelper {
     public static boolean hasEmissive(ItemStack stack) {
         return getLevel(EnchantmentRegistry.EMISSIVE, stack) > 0;
     }
+
+    public static boolean hasBulldozer(ItemStack stack) {
+        return getLevel(EnchantmentRegistry.BULLDOZER, stack) > 0;
+    }
 }

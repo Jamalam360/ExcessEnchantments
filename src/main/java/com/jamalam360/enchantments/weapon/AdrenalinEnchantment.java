@@ -1,15 +1,15 @@
 package com.jamalam360.enchantments.weapon;
 
-import com.jamalam360.util.CustomEnchantment;
+import com.jamalam360.util.SlotArrays;
+import com.jamalam360.util.enchantment.CustomEnchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 
 public class AdrenalinEnchantment extends CustomEnchantment {
     public AdrenalinEnchantment() {
-        super(Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
+        super(Rarity.UNCOMMON, EnchantmentTarget.WEAPON, SlotArrays.BOTH_HANDS);
     }
 
     @Override

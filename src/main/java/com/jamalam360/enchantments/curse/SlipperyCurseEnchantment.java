@@ -1,9 +1,9 @@
 package com.jamalam360.enchantments.curse;
 
+import com.jamalam360.util.SlotArrays;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 
@@ -13,7 +13,7 @@ public class SlipperyCurseEnchantment extends Enchantment {
     private final Random random = new Random();
 
     public SlipperyCurseEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.BREAKABLE, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.BREAKABLE, SlotArrays.BOTH_HANDS);
     }
 
     @Override

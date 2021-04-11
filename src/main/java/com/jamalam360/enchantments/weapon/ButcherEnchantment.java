@@ -1,16 +1,15 @@
 package com.jamalam360.enchantments.weapon;
 
-import com.jamalam360.enchantments.weapon.AquaAspectEnchantment;
 import com.jamalam360.util.CustomEntityGroup;
+import com.jamalam360.util.SlotArrays;
 import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EntityGroup;
-import net.minecraft.entity.EquipmentSlot;
 
 public class ButcherEnchantment extends Enchantment {
     public ButcherEnchantment() {
-        super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
+        super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, SlotArrays.BOTH_HANDS);
     }
 
     @Override

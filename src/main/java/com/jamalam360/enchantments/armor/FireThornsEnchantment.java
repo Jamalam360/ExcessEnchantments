@@ -1,7 +1,7 @@
 package com.jamalam360.enchantments.armor;
 
-import com.jamalam360.ExcessEnchantmentsInit;
 import com.jamalam360.util.EnchantmentRegistry;
+import com.jamalam360.util.SlotArrays;
 import net.minecraft.enchantment.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
@@ -15,7 +15,7 @@ import java.util.function.Consumer;
 @SuppressWarnings("unchecked")
 public class FireThornsEnchantment extends Enchantment {
     public FireThornsEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.ARMOR, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET});
+        super(Rarity.RARE, EnchantmentTarget.ARMOR, SlotArrays.ALL_ARMOR);
     }
 
     @Override

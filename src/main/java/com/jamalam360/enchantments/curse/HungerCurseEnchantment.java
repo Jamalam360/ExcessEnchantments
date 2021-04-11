@@ -1,16 +1,16 @@
 package com.jamalam360.enchantments.curse;
 
+import com.jamalam360.util.SlotArrays;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 
 public class HungerCurseEnchantment extends Enchantment {
     public HungerCurseEnchantment() {
-        super(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET});
+        super(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR, SlotArrays.ALL_ARMOR);
     }
 
     @Override

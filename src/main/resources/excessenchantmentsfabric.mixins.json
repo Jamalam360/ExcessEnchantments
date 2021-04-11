@@ -3,14 +3,15 @@
   "package": "com.jamalam360.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "BlockMixin",
+    "LivingEntityMixin",
+    "PlayerEntityMixin",
+    "ThornsEnchantmentMixin",
     "entitygroup.AnimalEntityMixin",
     "entitygroup.BlazeEntityMixin",
     "entitygroup.EnderDragonEntityMixin",
     "entitygroup.EndermanEntityMixin",
-    "LivingEntityMixin",
-    "entitygroup.MagmaCubeEntityMixin",
-    "PlayerEntityMixin",
-    "ThornsEnchantmentMixin"
+    "entitygroup.MagmaCubeEntityMixin"
   ],
   "client": [],
   "server": [],

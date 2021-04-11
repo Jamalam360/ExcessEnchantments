@@ -1,15 +1,15 @@
 package com.jamalam360.enchantments.armor;
 
+import com.jamalam360.util.SlotArrays;
 import com.jamalam360.util.interfaces.ITeleportRandom;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 
 public class LastStandEnchantment extends Enchantment {
     public LastStandEnchantment() {
-        super(Rarity.VERY_RARE, EnchantmentTarget.ARMOR_CHEST, new EquipmentSlot[]{EquipmentSlot.CHEST});
+        super(Rarity.VERY_RARE, EnchantmentTarget.ARMOR_CHEST, SlotArrays.CHEST);
     }
 
     @Override

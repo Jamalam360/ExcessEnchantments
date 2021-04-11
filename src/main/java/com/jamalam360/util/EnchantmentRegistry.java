@@ -6,10 +6,14 @@ import com.jamalam360.enchantments.curse.BluntCurseEnchantment;
 import com.jamalam360.enchantments.curse.HungerCurseEnchantment;
 import com.jamalam360.enchantments.curse.SlipperyCurseEnchantment;
 import com.jamalam360.enchantments.curse.SnowCurseEnchantment;
+import com.jamalam360.enchantments.shield.PushbackEvent;
+import com.jamalam360.enchantments.tools.BulldozerEnchantment;
 import com.jamalam360.enchantments.weapon.*;
 import com.oroarmor.config.Config;
 import com.oroarmor.config.ConfigItem;
+import me.crimsondawn45.fabricshieldlib.lib.object.ShieldEnchantment;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 
 import static net.minecraft.util.registry.Registry.ENCHANTMENT;
@@ -39,6 +43,8 @@ public class EnchantmentRegistry {
     public static Enchantment DISARM;
     public static Enchantment EMISSIVE;
     public static Enchantment STRIKE;
+    public static Enchantment PUSHBACK;
+    public static Enchantment BULLDOZER;
 
     public void registerEnchantments() {
         CONFIG.readConfigFromFile();
@@ -195,7 +201,21 @@ public class EnchantmentRegistry {
             );
         }
 
+        if(getValue(ConfigGroupEnabledEnchantments.PUSHBACK_ENABLED)) {
+            PUSHBACK = register(
+                    ENCHANTMENT,
+                    idOf("pushback"),
+                    new ShieldEnchantment(Enchantment.Rarity.UNCOMMON, new PushbackEvent(), Items.SHIELD)
+            );
+        }
 
+        if(getValue(ConfigGroupEnabledEnchantments.BULLDOZER_ENABLED)) {
+            BULLDOZER = register(
+                    ENCHANTMENT,
+                    idOf("bulldozer"),
+                    new BulldozerEnchantment()
+            );
+        }
     }
 
     public Identifier idOf(String name){

@@ -1,13 +1,13 @@
 package com.jamalam360.enchantments.curse;
 
+import com.jamalam360.util.SlotArrays;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EntityGroup;
-import net.minecraft.entity.EquipmentSlot;
 
 public class BluntCurseEnchantment extends Enchantment {
     public BluntCurseEnchantment() {
-        super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
+        super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, SlotArrays.BOTH_HANDS);
     }
 
     @Override

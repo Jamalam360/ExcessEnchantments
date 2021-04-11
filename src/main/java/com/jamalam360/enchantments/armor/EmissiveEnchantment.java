@@ -1,12 +1,12 @@
 package com.jamalam360.enchantments.armor;
 
+import com.jamalam360.util.SlotArrays;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
-import net.minecraft.entity.EquipmentSlot;
 
 public class EmissiveEnchantment extends Enchantment {
     public EmissiveEnchantment() {
-        super(Rarity.UNCOMMON, EnchantmentTarget.ARMOR_HEAD, new EquipmentSlot[]{EquipmentSlot.HEAD});
+        super(Rarity.UNCOMMON, EnchantmentTarget.ARMOR_HEAD, SlotArrays.HEAD);
     }
 
     @Override
