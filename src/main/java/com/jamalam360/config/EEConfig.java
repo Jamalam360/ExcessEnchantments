@@ -41,12 +41,13 @@ public class EEConfig extends com.oroarmor.config.Config {
         public static final ConfigItem<Boolean> STRIKE_ENABLED = new ConfigItem<>("strike", true, "Strike Enabled");
         public static final ConfigItem<Boolean> PUSHBACK_ENABLED = new ConfigItem<>("pushback", true, "Pushback Enabled");
         public static final ConfigItem<Boolean> BULLDOZER_ENABLED = new ConfigItem<>("bulldozer", true, "Bulldozer Enabled");
+        public static final ConfigItem<Boolean> MOLTEN_ENABLED = new ConfigItem<>("molten", true, "Molten Enabled");
 
         public ConfigGroupEnabledEnchantments() {
             super(ImmutableList.of(AQUA_ASPECT_ENABLED, MARATHON_ENABLED, FROST_ENABLED, SNOW_CURSE_ENABLED, BLUNT_CURSE_ENABLED, BUTCHER_ENABLED,
                     WARP_ENABLED, SLIPPERY_CURSE_ENABLED, HAPHAZARD_ENABLED, SWIFT_ENABLED, VAMPIRE_ENABLED, ADRENALIN_ENABLED,
                     LAST_STAND_ENABLED, HUNGER_CURSE_ENABLED, FIRE_THORNS_ENABLED, AERIAL_ENABLED, DISARM_ENABLED, EMISSIVE_ENABLED, STRIKE_ENABLED,
-                    BULLDOZER_ENABLED), "enchantments");
+                    BULLDOZER_ENABLED, MOLTEN_ENABLED), "enchantments");
         }
     }
 }

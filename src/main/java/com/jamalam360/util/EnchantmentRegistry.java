@@ -8,6 +8,7 @@ import com.jamalam360.enchantments.curse.SlipperyCurseEnchantment;
 import com.jamalam360.enchantments.curse.SnowCurseEnchantment;
 import com.jamalam360.enchantments.shield.PushbackEvent;
 import com.jamalam360.enchantments.tools.BulldozerEnchantment;
+import com.jamalam360.enchantments.tools.MoltenEnchantment;
 import com.jamalam360.enchantments.weapon.*;
 import com.oroarmor.config.Config;
 import com.oroarmor.config.ConfigItem;
@@ -45,6 +46,7 @@ public class EnchantmentRegistry {
     public static Enchantment STRIKE;
     public static Enchantment PUSHBACK;
     public static Enchantment BULLDOZER;
+    public static Enchantment MOLTEN;
 
     public void registerEnchantments() {
         CONFIG.readConfigFromFile();
@@ -214,6 +216,14 @@ public class EnchantmentRegistry {
                     ENCHANTMENT,
                     idOf("bulldozer"),
                     new BulldozerEnchantment()
+            );
+        }
+
+        if(getValue(ConfigGroupEnabledEnchantments.MOLTEN_ENABLED)) {
+            MOLTEN = register(
+                    ENCHANTMENT,
+                    idOf("molten"),
+                    new MoltenEnchantment()
             );
         }
     }
