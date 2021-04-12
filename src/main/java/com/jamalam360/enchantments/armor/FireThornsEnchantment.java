@@ -1,6 +1,6 @@
 package com.jamalam360.enchantments.armor;
 
-import com.jamalam360.util.EnchantmentRegistry;
+import com.jamalam360.util.registry.EnchantmentRegistry;
 import com.jamalam360.util.SlotArrays;
 import net.minecraft.enchantment.*;
 import net.minecraft.entity.Entity;

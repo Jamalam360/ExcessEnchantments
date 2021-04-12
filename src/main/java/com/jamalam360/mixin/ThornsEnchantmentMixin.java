@@ -1,7 +1,6 @@
 package com.jamalam360.mixin;
 
-import com.jamalam360.ExcessEnchantmentsInit;
-import com.jamalam360.util.EnchantmentRegistry;
+import com.jamalam360.util.registry.EnchantmentRegistry;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.enchantment.ThornsEnchantment;

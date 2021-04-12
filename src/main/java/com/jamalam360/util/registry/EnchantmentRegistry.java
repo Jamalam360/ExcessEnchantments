@@ -1,14 +1,10 @@
-package com.jamalam360.util;
+package com.jamalam360.util.registry;
 
 import com.jamalam360.ExcessEnchantmentsInit;
 import com.jamalam360.enchantments.armor.*;
-import com.jamalam360.enchantments.curse.BluntCurseEnchantment;
-import com.jamalam360.enchantments.curse.HungerCurseEnchantment;
-import com.jamalam360.enchantments.curse.SlipperyCurseEnchantment;
-import com.jamalam360.enchantments.curse.SnowCurseEnchantment;
+import com.jamalam360.enchantments.curse.*;
 import com.jamalam360.enchantments.shield.PushbackEvent;
 import com.jamalam360.enchantments.tools.BulldozerEnchantment;
-import com.jamalam360.enchantments.tools.MoltenEnchantment;
 import com.jamalam360.enchantments.weapon.*;
 import com.oroarmor.config.Config;
 import com.oroarmor.config.ConfigItem;
@@ -46,7 +42,7 @@ public class EnchantmentRegistry {
     public static Enchantment STRIKE;
     public static Enchantment PUSHBACK;
     public static Enchantment BULLDOZER;
-    public static Enchantment MOLTEN;
+    public static Enchantment JEFF;
 
     public void registerEnchantments() {
         CONFIG.readConfigFromFile();
@@ -219,11 +215,11 @@ public class EnchantmentRegistry {
             );
         }
 
-        if(getValue(ConfigGroupEnabledEnchantments.MOLTEN_ENABLED)) {
-            MOLTEN = register(
+        if(getValue(ConfigGroupEnabledEnchantments.JEFF_ENABLED)) {
+            JEFF = register(
                     ENCHANTMENT,
-                    idOf("molten"),
-                    new MoltenEnchantment()
+                    idOf("jeff_curse"),
+                    new JeffCurseEnchantment()
             );
         }
     }

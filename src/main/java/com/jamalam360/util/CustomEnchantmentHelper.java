@@ -1,5 +1,6 @@
 package com.jamalam360.util;
 
+import com.jamalam360.util.registry.EnchantmentRegistry;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;

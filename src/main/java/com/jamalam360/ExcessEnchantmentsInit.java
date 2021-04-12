@@ -1,7 +1,7 @@
 package com.jamalam360;
 
 import com.jamalam360.config.EEConfig;
-import com.jamalam360.util.EnchantmentRegistry;
+import com.jamalam360.util.registry.EnchantmentRegistry;
 import com.jamalam360.util.githubversionchecker.VersionChecker;
 import com.oroarmor.config.Config;
 import com.oroarmor.config.command.ConfigCommand;
