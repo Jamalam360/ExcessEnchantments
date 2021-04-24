@@ -42,7 +42,6 @@ public class EnchantmentRegistry {
     public static Enchantment STRIKE;
     public static Enchantment PUSHBACK;
     public static Enchantment BULLDOZER;
-    public static Enchantment JEFF;
 
     public void registerEnchantments() {
         CONFIG.readConfigFromFile();
@@ -212,14 +211,6 @@ public class EnchantmentRegistry {
                     ENCHANTMENT,
                     idOf("bulldozer"),
                     new BulldozerEnchantment()
-            );
-        }
-
-        if(getValue(ConfigGroupEnabledEnchantments.JEFF_ENABLED)) {
-            JEFF = register(
-                    ENCHANTMENT,
-                    idOf("jeff_curse"),
-                    new JeffCurseEnchantment()
             );
         }
     }

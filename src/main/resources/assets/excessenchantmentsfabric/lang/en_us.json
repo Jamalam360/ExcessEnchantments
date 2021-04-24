@@ -21,5 +21,26 @@
   "enchantment.excessenchantmentsfabric.strike": "Strike",
   "enchantment.excessenchantmentsfabric.pushback": "Pushback",
   "enchantment.excessenchantmentsfabric.bulldozer": "Bulldozer",
-  "enchantment.excessenchantmentsfabric.jeff_curse": "Curse of Jeff"
+
+  "enchantment.excessenchantmentsfabric.aqua_aspect.desc": "Deals more damage to fire and ender mobs",
+  "enchantment.excessenchantmentsfabric.marathon.desc": "Decreases hunger used while sprinting",
+  "enchantment.excessenchantmentsfabric.frost.desc": "Gives the target slowness",
+  "enchantment.excessenchantmentsfabric.snow_curse.desc": "Causes the user to trail snow",
+  "enchantment.excessenchantmentsfabric.blunt_curse.desc": "Decreases weapon damage",
+  "enchantment.excessenchantmentsfabric.butcher.desc": "Deals more damage to passive/animal mobs",
+  "enchantment.excessenchantmentsfabric.warp.desc": "Has a chance to randomly teleport a target away",
+  "enchantment.excessenchantmentsfabric.slippery_curse.desc": "Causes the weapon to be randomly dropped",
+  "enchantment.excessenchantmentsfabric.haphazard.desc": "Oh no...",
+  "enchantment.excessenchantmentsfabric.swift.desc": "Gives the user swiftness",
+  "enchantment.excessenchantmentsfabric.vampire.desc": "Gives the user health when they kill a target",
+  "enchantment.excessenchantmentsfabric.adrenalin.desc": "Deals more damage when the user is low on health",
+  "enchantment.excessenchantmentsfabric.last_stand.desc": "Randomly teleports you away when you are about to die",
+  "enchantment.excessenchantmentsfabric.hunger_curse.desc": "Gives the user hunger when they are damaged",
+  "enchantment.excessenchantmentsfabric.fire_thorns.desc": "Sets an attacker on fire",
+  "enchantment.excessenchantmentsfabric.aerial.desc": "Shoots the target upwards",
+  "enchantment.excessenchantmentsfabric.disarm.desc": "Has a chance to disarm the target",
+  "enchantment.excessenchantmentsfabric.emissive.desc": "Gives the user the glowing effect",
+  "enchantment.excessenchantmentsfabric.strike.desc": "Has a chance to randomly strike the target with lightning",
+  "enchantment.excessenchantmentsfabric.pushback.desc": "Pushes back the attacker",
+  "enchantment.excessenchantmentsfabric.bulldozer.desc": "Digs out a larger space"
 }

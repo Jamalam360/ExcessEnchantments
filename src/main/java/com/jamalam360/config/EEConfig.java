@@ -41,7 +41,6 @@ public class EEConfig extends com.oroarmor.config.Config {
         public static final ConfigItem<Boolean> STRIKE_ENABLED = new ConfigItem<>("strike", true, "Strike Enabled");
         public static final ConfigItem<Boolean> PUSHBACK_ENABLED = new ConfigItem<>("pushback", true, "Pushback Enabled");
         public static final ConfigItem<Boolean> BULLDOZER_ENABLED = new ConfigItem<>("bulldozer", true, "Bulldozer Enabled");
-        public static final ConfigItem<Boolean> JEFF_ENABLED = new ConfigItem<>("jeffCurse", true, "Curse of Jeff Enabled");
 
         public ConfigGroupEnabledEnchantments() {
             super(ImmutableList.of(AQUA_ASPECT_ENABLED, MARATHON_ENABLED, FROST_ENABLED, SNOW_CURSE_ENABLED, BLUNT_CURSE_ENABLED, BUTCHER_ENABLED,
