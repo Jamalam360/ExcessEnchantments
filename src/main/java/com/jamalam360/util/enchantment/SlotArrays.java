@@ -1,4 +1,4 @@
-package com.jamalam360.util;
+package com.jamalam360.util.enchantment;
 
 import net.minecraft.entity.EquipmentSlot;
 

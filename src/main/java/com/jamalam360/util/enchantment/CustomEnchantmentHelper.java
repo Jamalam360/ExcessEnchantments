@@ -1,4 +1,4 @@
-package com.jamalam360.util;
+package com.jamalam360.util.enchantment;
 
 import com.jamalam360.util.registry.EnchantmentRegistry;
 import net.minecraft.enchantment.Enchantment;

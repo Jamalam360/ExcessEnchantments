@@ -1,6 +1,7 @@
 package com.jamalam360.enchantments.tools;
 
-import com.jamalam360.util.SlotArrays;
+import com.jamalam360.util.enchantment.LevelHelper;
+import com.jamalam360.util.enchantment.SlotArrays;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 
@@ -11,7 +12,7 @@ public class BulldozerEnchantment extends Enchantment {
 
     @Override
     public int getMinPower(int level) {
-        return 26;
+        return LevelHelper.getEfficiencyLevel(level);
     }
 
     @Override

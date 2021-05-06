@@ -1,6 +1,6 @@
 package com.jamalam360.mixin;
 
-import com.jamalam360.util.CustomEnchantmentHelper;
+import com.jamalam360.util.enchantment.CustomEnchantmentHelper;
 import com.jamalam360.util.registry.EnchantmentRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

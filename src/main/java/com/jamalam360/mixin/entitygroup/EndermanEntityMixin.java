@@ -1,6 +1,6 @@
 package com.jamalam360.mixin.entitygroup;
 
-import com.jamalam360.util.CustomEnchantmentHelper;
+import com.jamalam360.util.enchantment.CustomEnchantmentHelper;
 import com.jamalam360.util.CustomEntityGroup;
 import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.EntityType;

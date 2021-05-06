@@ -1,6 +1,7 @@
 package com.jamalam360.enchantments.curse;
 
-import com.jamalam360.util.SlotArrays;
+import com.jamalam360.util.enchantment.LevelHelper;
+import com.jamalam360.util.enchantment.SlotArrays;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EntityGroup;
@@ -12,7 +13,7 @@ public class BluntCurseEnchantment extends Enchantment {
 
     @Override
     public int getMinPower(int level) {
-        return 25;
+        return LevelHelper.getCurseLevel(level);
     }
 
     @Override

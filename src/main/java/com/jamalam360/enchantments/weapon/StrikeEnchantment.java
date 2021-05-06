@@ -1,6 +1,7 @@
 package com.jamalam360.enchantments.weapon;
 
-import com.jamalam360.util.SlotArrays;
+import com.jamalam360.util.enchantment.LevelHelper;
+import com.jamalam360.util.enchantment.SlotArrays;
 import com.jamalam360.util.SmiteHelper;
 import com.jamalam360.util.enchantment.CustomEnchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
@@ -18,7 +19,7 @@ public class StrikeEnchantment extends CustomEnchantment {
 
     @Override
     public int getMinPower(int level) {
-        return 26;
+        return LevelHelper.getSharpnesLevel(level);
     }
 
     @Override

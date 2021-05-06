@@ -1,7 +1,8 @@
 package com.jamalam360.enchantments.armor;
 
+import com.jamalam360.util.enchantment.LevelHelper;
 import com.jamalam360.util.registry.EnchantmentRegistry;
-import com.jamalam360.util.SlotArrays;
+import com.jamalam360.util.enchantment.SlotArrays;
 import net.minecraft.enchantment.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
@@ -20,7 +21,7 @@ public class FireThornsEnchantment extends Enchantment {
 
     @Override
     public int getMinPower(int level) {
-        return 24;
+        return LevelHelper.getThornsLevel(level);
     }
 
     @Override

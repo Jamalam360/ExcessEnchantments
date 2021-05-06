@@ -1,6 +1,7 @@
 package com.jamalam360.enchantments.weapon;
 
-import com.jamalam360.util.SlotArrays;
+import com.jamalam360.util.enchantment.LevelHelper;
+import com.jamalam360.util.enchantment.SlotArrays;
 import com.jamalam360.util.enchantment.CustomEnchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
@@ -19,7 +20,7 @@ public class DisarmEnchantment extends CustomEnchantment {
 
     @Override
     public int getMinPower(int level) {
-        return 22;
+        return LevelHelper.getSharpnesLevel(level);
     }
 
     @Override

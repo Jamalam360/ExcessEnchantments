@@ -1,6 +1,7 @@
 package com.jamalam360.enchantments.weapon;
 
-import com.jamalam360.util.SlotArrays;
+import com.jamalam360.util.enchantment.LevelHelper;
+import com.jamalam360.util.enchantment.SlotArrays;
 import com.jamalam360.util.enchantment.CustomEnchantment;
 import com.jamalam360.util.haphazard.HaphazardEvents;
 import com.jamalam360.util.haphazard.events.HaphazardEvent;
@@ -15,7 +16,7 @@ public class HaphazardEnchantment extends CustomEnchantment {
 
     @Override
     public int getMinPower(int level) {
-        return 25;
+        return LevelHelper.getSharpnesLevel(level);
     }
 
     @Override

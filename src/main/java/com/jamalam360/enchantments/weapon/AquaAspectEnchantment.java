@@ -1,7 +1,8 @@
 package com.jamalam360.enchantments.weapon;
 
 import com.jamalam360.util.CustomEntityGroup;
-import com.jamalam360.util.SlotArrays;
+import com.jamalam360.util.enchantment.LevelHelper;
+import com.jamalam360.util.enchantment.SlotArrays;
 import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
@@ -14,7 +15,7 @@ public class AquaAspectEnchantment extends Enchantment {
 
     @Override
     public int getMinPower(int level) {
-        return 5 + (level - 1) * 8;
+        return LevelHelper.getSharpnesLevel(level);
     }
 
     @Override
