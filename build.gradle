@@ -14,11 +14,10 @@ minecraft {
 }
 
 repositories {
+	mavenCentral()
+
 	maven {
 		url "https://maven.terraformersmc.com/releases/"
-	}
-	maven {
-		url "https://dl.bintray.com/oroarmor/oroarmor"
 	}
 	maven {
 		url "https://maven.shedaniel.me/"
@@ -40,8 +39,8 @@ dependencies {
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-	modImplementation 'com.oroarmor:oro-config:1.2.0'
-	include 'com.oroarmor:oro-config:1.2.0'
+	modImplementation 'com.oroarmor:oro-config-fabric:2.1.0'
+	include 'com.oroarmor:oro-config-fabric:2.1.0'
 
 	modImplementation "de.guntram.mcmod:crowdin-translate:1.2"
 	include "de.guntram.mcmod:crowdin-translate:1.2"

@@ -93,24 +93,24 @@ public abstract class LivingEntityMixin extends Entity implements ISnowy, ITelep
     }
 
     @Override
-    public void teleport() {
-        this.teleportRandomly();
+    public void teleportEE() {
+        this.teleportRandomlyEE();
     }
 
-    private boolean teleportRandomly() {
+    private boolean teleportRandomlyEE() {
         LivingEntity instance = ((LivingEntity) (Object) this);
 
         if (!this.world.isClient() && this.isAlive()) {
             double d = this.getX() + (this.random.nextDouble() - 0.5D) * 64.0D;
             double e = this.getY() + (double) (this.random.nextInt(64) - 32);
             double f = this.getZ() + (this.random.nextDouble() - 0.5D) * 64.0D;
-            return this.teleportTo(d, e, f);
+            return this.teleportToEE(d, e, f);
         } else {
             return false;
         }
     }
 
-    private boolean teleportTo(double x, double y, double z) {
+    private boolean teleportToEE(double x, double y, double z) {
         BlockPos.Mutable mutable = new BlockPos.Mutable(x, y, z);
 
         while (mutable.getY() > 0 && !this.world.getBlockState(mutable).getMaterial().blocksMovement()) {
@@ -121,7 +121,7 @@ public abstract class LivingEntityMixin extends Entity implements ISnowy, ITelep
         boolean bl = blockState.getMaterial().blocksMovement();
         boolean bl2 = blockState.getFluidState().isIn(FluidTags.WATER);
         if (bl && !bl2) {
-            boolean bl3 = this.teleport(x, y, z, true);
+            boolean bl3 = this.teleportEE(x, y, z, true);
             if (bl3 && !this.isSilent()) {
                 this.world.playSound((PlayerEntity) null, this.prevX, this.prevY, this.prevZ, SoundEvents.ENTITY_ENDERMAN_TELEPORT, this.getSoundCategory(), 1.0F, 1.0F);
                 this.playSound(SoundEvents.ENTITY_ENDERMAN_TELEPORT, 1.0F, 1.0F);
@@ -133,7 +133,7 @@ public abstract class LivingEntityMixin extends Entity implements ISnowy, ITelep
         }
     }
 
-    public boolean teleport(double x, double y, double z, boolean particleEffects) {
+    public boolean teleportEE(double x, double y, double z, boolean particleEffects) {
         double d = this.getX();
         double e = this.getY();
         double f = this.getZ();
