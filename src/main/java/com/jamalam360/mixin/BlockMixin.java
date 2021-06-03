@@ -1,49 +1,26 @@
 package com.jamalam360.mixin;
 
-import com.jamalam360.util.CustomEnchantmentHelper;
-import com.jamalam360.util.EnchantmentRegistry;
+import com.jamalam360.util.enchantment.CustomEnchantmentHelper;
+import com.jamalam360.util.registry.EnchantmentRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @Mixin(Block.class)
 public abstract class BlockMixin {
-
-    @Inject(at = @At("HEAD"), method = "dropStacks(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/entity/BlockEntity;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)V", cancellable = true)
-    private static void dropStacks(BlockState state, World world, BlockPos pos, BlockEntity blockEntity, Entity entity, ItemStack stack, CallbackInfo ci){
-        if (world instanceof ServerWorld) {
-            List<ItemStack> stackList = getDroppedStacks(state, (ServerWorld)world, pos, blockEntity, entity, stack);
-
-            for (ItemStack itemStack : stackList){
-                world.getRecipeManager().
-            }
-
-            stackList.forEach((itemStack) -> dropStack(world, pos, itemStack));
-
-            state.onStacksDropped((ServerWorld)world, pos, stack);
-
-            ci.cancel();
-        }
-    }
-
     @Inject(at = @At("HEAD"), method = "afterBreak(Lnet/minecraft/world/World;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;Lnet/minecraft/block/entity/BlockEntity;Lnet/minecraft/item/ItemStack;)V")
     public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, BlockEntity blockEntity, ItemStack stack, CallbackInfo ci){
         if(CustomEnchantmentHelper.hasBulldozer(stack) && player.isSneaking() && stack.isEffectiveOn(state)){
@@ -186,14 +163,5 @@ public abstract class BlockMixin {
                 }
             }
         }
-    }
-
-    @Shadow
-    public static List<ItemStack> getDroppedStacks(BlockState state, ServerWorld world, BlockPos pos, @Nullable BlockEntity blockEntity, @Nullable Entity entity, ItemStack stack) {
-        return null;
-    }
-
-    @Shadow
-    public static void dropStack(World world, BlockPos pos, ItemStack stack) {
     }
 }
