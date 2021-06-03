@@ -26,7 +26,7 @@ public class LastStandEnchantment extends Enchantment {
     @Override
     public void onUserDamaged(LivingEntity user, Entity attacker, int level) {
         if (user.getHealth() <= 2f) { //If lower than or equal to 1 heart
-            ((ITeleportRandom) user).teleport();
+            ((ITeleportRandom) user).teleportEE();
         }
     }
 }

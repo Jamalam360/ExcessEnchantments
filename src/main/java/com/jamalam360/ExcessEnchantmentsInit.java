@@ -8,11 +8,13 @@ import com.oroarmor.config.command.ConfigCommand;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.minecraft.command.CommandSource;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.Field;
+import java.util.function.Predicate;
 
 @SuppressWarnings("unused")
 public class ExcessEnchantmentsInit implements ModInitializer {
@@ -56,7 +58,8 @@ public class ExcessEnchantmentsInit implements ModInitializer {
         //region Config Init
         CONFIG.readConfigFromFile();
         ServerLifecycleEvents.SERVER_STOPPED.register(instance -> CONFIG.saveConfigToFile());
-        CommandRegistrationCallback.EVENT.register(new ConfigCommand(CONFIG)::register);
+        CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> new ConfigCommand(CONFIG).register(dispatcher, p -> ((CommandSource)p).hasPermissionLevel(2)));
+
         //endregion
 
         //region Calculating number of registered enchantments and outputting the result

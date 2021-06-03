@@ -33,7 +33,7 @@ public class WarpEnchantment extends Enchantment {
             double r = random.nextDouble();
 
             if (r < 0.25) {
-                ((ITeleportRandom) target).teleport();
+                ((ITeleportRandom) target).teleportEE();
             }
         }
     }
