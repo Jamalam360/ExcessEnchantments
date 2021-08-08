@@ -1,3 +1,7 @@
+# Depreciation Notice
+This project has been archived due the hard to maintain codebase (I used this mod to learn new things so it's not very clean). I will likely come back to it at some point once I have enough time for a complete rewrite.
+
+
 Excess Enchantments
 
 To contribute to translations, please see the GitHub wiki tab
